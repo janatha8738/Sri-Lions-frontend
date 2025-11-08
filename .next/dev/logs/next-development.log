@@ -1,5 +1,593 @@
-[00:00:08.725] Server  LOG      ✓ Ready in 7s
-[00:00:30.769] Server  LOG      ○ Compiling / ...
-[00:00:47.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:47.367] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:34.373] Server  LOG      ✓ Compiled in 136ms
+[00:00:02.640] Server  LOG      ✓ Ready in 1869ms
+[00:00:09.009] Server  LOG      ○ Compiling / ...
+[00:00:12.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.449] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:12.449] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:50.966] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:51.246] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:04.898] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:05.130] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:32.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:32.947] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:40.717] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:41.170] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:04:41.170] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:43.528] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:43.800] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:46.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:46.655] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:04:46.655] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:48.826] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:49.026] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:05:59.533] Server  LOG      ✓ Compiled in 510ms
+[00:06:01.949] Server  LOG      ✓ Compiled in 48ms
+[00:08:27.059] Server  LOG      ✓ Compiled in 253ms
+[00:09:42.989] Server  LOG      ✓ Compiled in 105ms
+[00:09:49.632] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:49.906] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:11:27.207] Server  LOG      ✓ Compiled in 150ms
+[00:12:14.405] Server  LOG      ✓ Compiled in 571ms
+[00:12:15.591] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:12:15.639] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/Components/Navbar.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:16.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:17.379] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `RootLayout`.
+[00:12:20.953] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:21.475] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:21.957] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:23.146] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:31.105] Server  LOG      ✓ Compiled in 49ms
+[00:12:32.109] Server  LOG      ✓ Compiled in 31ms
+[00:13:15.157] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:15.395] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:17:49.957] Server  LOG      ✓ Compiled in 776ms
+[01:17:55.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:56.202] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:19:14.696] Server  LOG      ✓ Compiled in 51ms
+[01:19:22.706] Server  LOG      ✓ Compiled in 147ms
+[01:19:27.719] Server  LOG      ✓ Compiled in 61ms
+[01:19:30.076] Server  LOG      ✓ Compiled in 54ms
+[01:19:31.181] Server  LOG      ✓ Compiled in 34ms
+[01:19:32.537] Server  LOG      ✓ Compiled in 64ms
+[01:19:35.819] Server  LOG      ✓ Compiled in 80ms
+[01:19:38.360] Server  LOG      ✓ Compiled in 53ms
+[01:19:41.907] Server  LOG      ✓ Compiled in 42ms
+[01:20:57.824] Server  LOG      ✓ Compiled in 71ms
+[01:21:01.507] Server  LOG      ✓ Compiled in 47ms
+[01:21:52.785] Server  LOG      ✓ Compiled in 56ms
+[01:21:55.737] Server  LOG      ✓ Compiled in 52ms
+[01:21:59.243] Server  LOG      ✓ Compiled in 39ms
+[01:22:42.620] Server  LOG      ✓ Compiled in 36ms
+[01:26:26.218] Server  LOG      ✓ Compiled in 108ms
+[01:28:04.196] Server  LOG      ✓ Compiled in 66ms
+[01:28:15.284] Server  LOG      ✓ Compiled in 109ms
+[01:28:22.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:02.497] Server  LOG      ✓ Compiled in 170ms
+[01:29:38.684] Server  LOG      ✓ Compiled in 102ms
+[01:30:48.347] Server  LOG      ✓ Compiled in 150ms
+[01:31:02.850] Server  LOG      ✓ Compiled in 93ms
+[01:31:09.904] Server  LOG      ✓ Compiled in 77ms
+[01:31:10.069] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:31:11.075] Server  LOG      ✓ Compiled in 79ms
+[01:31:15.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:15.843] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[54:58:22.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[54:58:22.771] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[55:02:15.644] Server  LOG      ✓ Compiled in 401ms
+[55:03:40.432] Server  LOG      ✓ Compiled in 132ms
+[55:04:21.328] Server  LOG      ✓ Compiled in 236ms
+[55:05:36.919] Server  LOG      ✓ Compiled in 1168ms
+[55:05:37.816] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:05:37.820] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news1.jpg" "received" null
+[55:05:37.856] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:05:38.057] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:05:38.152] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news1.jpg" "received" null
+[55:05:38.167] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:05:45.347] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news1.jpg" "received" null
+[55:05:45.374] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:05:45.383] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:05:48.886] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news1.jpg" "received" null
+[55:05:48.898] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:05:48.900] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:05:53.912] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news1.jpg" "received" null
+[55:05:54.236] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:05:54.242] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:17:33.106] Server  LOG      ✓ Compiled in 357ms
+[55:17:34.144] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:19:34.150] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:19:34.161] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:19:47.555] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:19:47.563] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:19:48.356] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:19:48.446] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:18.496] Server  LOG      ✓ Compiled in 605ms
+[55:21:25.698] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:25.711] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:21:26.264] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:26.283] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:21:26.628] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:26.637] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:21:41.182] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:41.199] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:21:42.019] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:42.049] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:21:43.649] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:21:43.662] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:23:58.316] Server  LOG      ✓ Compiled in 203ms
+[55:24:16.556] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:24:16.558] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:24:25.236] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:24:25.242] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:25:42.733] Server  LOG      ✓ Compiled in 337ms
+[55:25:42.885] Browser ERROR   ./app/Components/Navbar.tsx:35:15
+Parsing ecmascript source code failed
+  33 |
+  34 |   useEffect(() => {
+> 35 |     let timer:;
+     |               ^
+  36 |     if (!isHovering) {
+  37 |       timer = setTimeout(() => setIsSportsOpen(false), 200);
+  38 |     }
+
+Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+
+Import trace:
+  Server Component:
+    ./app/Components/Navbar.tsx
+    ./app/layout.tsx
+[55:25:45.354] Server  LOG      ✓ Compiled in 496ms
+[55:27:08.226] Server  LOG      ✓ Compiled in 141ms
+[55:28:27.419] Server  LOG      ✓ Compiled in 61ms
+[55:28:35.874] Server  LOG      ✓ Compiled in 39ms
+[55:29:49.233] Server  LOG      ✓ Compiled in 48ms
+[55:30:21.090] Server  LOG      ✓ Compiled in 45ms
+[55:32:32.019] Server  LOG      ✓ Compiled in 1482ms
+[55:32:42.314] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[55:32:43.529] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:32:43.534] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:32:43.879] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:32:43.879] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:32:43.879] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[55:32:43.879] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:12.868] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[55:33:13.084] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:33:13.111] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:33:13.353] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[55:33:13.353] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:13.353] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:13.353] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[55:33:13.353] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:15.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[55:33:16.370] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:33:16.377] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:33:16.669] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[55:33:16.669] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:16.669] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:16.669] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[55:33:16.669] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:18.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[55:33:18.619] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:33:18.675] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:33:18.942] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[55:33:18.942] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:18.943] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:33:18.943] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[55:33:18.943] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[55:36:02.746] Server  LOG      ✓ Compiled in 162ms
+[55:36:40.952] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:36:40.962] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:36:42.287] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[55:36:42.318] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[55:39:40.622] Server  LOG      ✓ Compiled in 199ms
+[55:58:21.207] Server  LOG      ✓ Compiled in 477ms
+[55:58:23.287] Server  LOG      ✓ Compiled in 109ms
+[55:58:26.342] Server  LOG      ✓ Compiled in 40ms
+[55:58:29.173] Server  LOG      ✓ Compiled in 42ms
+[55:58:59.327] Server  LOG      ✓ Compiled in 286ms
+[55:59:01.659] Server  LOG      ✓ Compiled in 74ms
+[55:59:58.180] Server  LOG      ✓ Compiled in 37ms
+[56:00:02.530] Server  LOG      ✓ Compiled in 32ms
+[56:00:08.800] Server  LOG      ✓ Compiled in 41ms
+[56:00:13.210] Server  LOG      ✓ Compiled in 33ms
+[56:00:25.651] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[56:00:25.664] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[56:00:25.666] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[56:00:25.667] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[56:00:25.836] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[56:00:25.851] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[56:00:57.570] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[56:00:57.576] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[56:01:08.871] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[56:01:08.886] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:43:58.976] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:43:59.022] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:43:59.031] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:43:59.034] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:43:59.037] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:43:59.041] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:44:04.896] Server  LOG      ✓ Compiled in 1202ms
+[58:44:05.574] Server  LOG      ✓ Compiled in 363ms
+[58:44:06.824] Server  LOG      ✓ Compiled in 413ms
+[58:44:14.179] Server  LOG      ✓ Compiled in 79ms
+[58:44:16.175] Server  LOG      ✓ Compiled in 63ms
+[58:44:30.238] Server  LOG      ✓ Compiled in 53ms
+[58:44:32.582] Server  LOG      ✓ Compiled in 38ms
+[58:44:34.685] Server  LOG      ✓ Compiled in 55ms
+[58:44:43.787] Server  LOG      ✓ Compiled in 35ms
+[58:46:53.882] Server  LOG      ✓ Compiled in 88ms
+[58:46:57.449] Server  LOG      ✓ Compiled in 34ms
+[58:47:01.716] Server  LOG      ✓ Compiled in 60ms
+[58:47:13.994] Server  LOG      ✓ Compiled in 65ms
+[58:47:21.248] Server  LOG      ✓ Compiled in 29ms
+[58:47:22.714] Server  LOG      ✓ Compiled in 43ms
+[58:47:28.461] Server  LOG      ✓ Compiled in 43ms
+[58:47:33.323] Server  LOG      ✓ Compiled in 37ms
+[58:48:58.647] Server  LOG      ✓ Compiled in 98ms
+[58:49:00.901] Server  LOG      ✓ Compiled in 79ms
+[58:49:11.806] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:49:12.931] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:49:12.937] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:49:13.308] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[58:49:13.308] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:49:13.308] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:49:13.308] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[58:49:13.308] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:49:21.498] Server  LOG      ✓ Compiled in 99ms
+[58:49:23.982] Server  LOG      ✓ Compiled in 56ms
+[58:49:28.729] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:49:28.767] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:49:29.461] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:49:29.566] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:49:29.568] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:49:29.570] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:50:28.131] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:50:28.332] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:50:29.890] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:50:29.956] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:50:30.969] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:50:31.006] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:52:36.763] Server  LOG      ✓ Compiled in 587ms
+[58:52:37.507] Server  LOG      ✓ Compiled in 500ms
+[58:52:40.417] Server  LOG      ✓ Compiled in 55ms
+[58:52:42.023] Server  LOG      ✓ Compiled in 50ms
+[58:52:43.473] Server  LOG      ✓ Compiled in 38ms
+[58:52:46.141] Server  LOG      ✓ Compiled in 61ms
+[58:52:48.000] Server  LOG      ✓ Compiled in 59ms
+[58:52:54.302] Server  LOG      ✓ Compiled in 55ms
+[58:53:02.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:53:02.860] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:53:02.871] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:53:03.367] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[58:53:03.368] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:03.368] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:03.368] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[58:53:03.368] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:17.466] Server  LOG      ✓ Compiled in 101ms
+[58:53:20.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:53:21.444] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:53:21.456] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:53:22.021] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[58:53:22.022] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:22.022] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:22.022] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[58:53:22.022] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:53:41.370] Server  LOG      ✓ Compiled in 50ms
+[58:53:42.743] Server  LOG      ✓ Compiled in 132ms
+[58:53:49.908] Server  LOG      ✓ Compiled in 53ms
+[58:53:51.484] Server  LOG      ✓ Compiled in 47ms
+[58:53:59.658] Server  LOG      ✓ Compiled in 82ms
+[58:54:07.933] Server  LOG      ✓ Compiled in 64ms
+[58:54:20.039] Server  LOG      ✓ Compiled in 50ms
+[58:54:21.210] Server  LOG      ✓ Compiled in 50ms
+[58:56:07.745] Server  LOG      ✓ Compiled in 80ms
+[58:56:20.359] Server  LOG      ✓ Compiled in 195ms
+[58:56:20.775] Browser ERROR   uncaughtError: ReferenceError: mar is not defined
+[58:56:21.980] Server  LOG      ✓ Compiled in 214ms
+[58:56:22.037] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[58:56:23.606] Server  ERROR    ⨯ ReferenceError: margin is not defined
+[58:56:23.777] Browser ERROR   uncaughtError: ReferenceError: margin is not defined
+[58:56:25.169] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:56:26.147] Browser ERROR   uncaughtError: ReferenceError: margin is not defined
+[58:56:32.878] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[58:56:32.898] Server  LOG      ✓ Compiled in 60ms
+[58:56:33.693] Server  ERROR    ⨯ ReferenceError: marginTop is not defined
+[58:56:34.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:56:35.146] Browser ERROR   uncaughtError: ReferenceError: marginTop is not defined
+[58:56:37.909] Server  LOG      ✓ Compiled in 249ms
+[58:56:38.145] Browser ERROR   ./app/Components/Hero.tsx:31:7
+Parsing ecmascript source code failed
+  29 |         height: `calc(100vh - ${offset}px)`,
+  30 |         marginTop:
+> 31 |       }}
+     |       ^
+  32 |     >
+  33 |       {/* Overlay */}
+  34 |       <div className="absolute inset-0 bg-black/50" />
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./app/Components/Hero.tsx
+    ./app/page.tsx
+[58:56:40.144] Browser ERROR   ./app/Components/Hero.tsx:31:7
+Parsing ecmascript source code failed
+  29 |         height: `calc(100vh - ${offset}px)`,
+  30 |         marginTop: 
+> 31 |       }}
+     |       ^
+  32 |     >
+  33 |       {/* Overlay */}
+  34 |       <div className="absolute inset-0 bg-black/50" />
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./app/Components/Hero.tsx
+    ./app/page.tsx
+[58:56:41.310] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[58:56:42.233] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:56:42.255] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:56:42.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[58:56:43.147] Browser WARN    Image with src "/news2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:56:43.147] Browser WARN    Image with src "/news3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:56:43.147] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[58:56:43.147] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[58:56:43.909] Server  LOG      ✓ Compiled in 38ms
+[58:56:44.914] Server  LOG      ✓ Compiled in 33ms
+[58:56:47.792] Server  LOG      ✓ Compiled in 30ms
+[58:57:08.615] Server  LOG      ✓ Compiled in 53ms
+[58:57:11.372] Server  LOG      ✓ Compiled in 35ms
+[58:57:12.832] Server  LOG      ✓ Compiled in 32ms
+[58:57:18.247] Server  LOG      ✓ Compiled in 30ms
+[58:57:21.075] Server  LOG      ✓ Compiled in 31ms
+[58:57:22.361] Server  LOG      ✓ Compiled in 69ms
+[58:57:27.199] Server  LOG      ✓ Compiled in 34ms
+[58:57:30.594] Server  LOG      ✓ Compiled in 41ms
+[58:57:39.632] Server  LOG      ✓ Compiled in 29ms
+[58:57:42.627] Server  LOG      ✓ Compiled in 31ms
+[58:57:44.692] Server  LOG      ✓ Compiled in 30ms
+[58:57:46.772] Server  LOG      ✓ Compiled in 28ms
+[58:57:51.706] Server  LOG      ✓ Compiled in 33ms
+[58:57:54.372] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:57:54.430] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:57:54.805] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:57:54.808] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:57:55.441] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:57:55.455] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:15.216] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:15.239] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:58:15.940] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:15.999] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:58:16.765] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:16.844] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:58:27.482] Server  LOG      ✓ Compiled in 77ms
+[58:58:28.879] Server  LOG      ✓ Compiled in 64ms
+[58:58:39.888] Server  LOG      ✓ Compiled in 37ms
+[58:58:41.530] Server  LOG      ✓ Compiled in 46ms
+[58:58:46.936] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:58:46.955] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:47.404] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:47.424] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:58:47.428] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:58:47.430] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:59:01.165] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:59:01.233] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:59:01.711] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:59:01.766] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[58:59:02.868] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.jpg" "received" null
+[58:59:02.875] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news3.jpg" "received" null
+[59:02:02.527] Server  LOG      ✓ Compiled in 312ms
+[59:02:06.208] Server  LOG      ✓ Compiled in 39ms
+[59:02:08.100] Server  LOG      ✓ Compiled in 76ms
+[59:02:13.430] Server  LOG      ✓ Compiled in 41ms
+[59:02:15.367] Server  LOG      ✓ Compiled in 61ms
+[59:04:12.924] Server  LOG      ✓ Compiled in 39ms
+[59:04:13.057] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2." "received" null
+[59:04:15.069] Server  LOG      ✓ Compiled in 39ms
+[59:04:15.081] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/news2.pn" "received" null
+[59:04:16.271] Server  LOG      ✓ Compiled in 41ms
+[59:04:16.726] Browser WARN    Image with src "/news2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:04:22.317] Server  LOG      ✓ Compiled in 31ms
+[59:04:22.686] Browser WARN    Image with src "/news3.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:08:23.779] Server  LOG      ✓ Compiled in 141ms
+[59:09:27.103] Server  LOG      ✓ Compiled in 35ms
+[59:09:28.345] Server  LOG      ✓ Compiled in 36ms
+[59:09:40.656] Server  LOG      ✓ Compiled in 73ms
+[59:12:50.388] Server  LOG      ✓ Compiled in 351ms
+[59:13:05.492] Server  ERROR    ⨯ ReferenceError: window is not defined
+[59:13:05.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[59:13:07.943] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[59:13:08.196] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:13:08.196] Browser WARN    Image with src "/news2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:13:08.196] Browser WARN    Image with src "/news3.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:14:55.765] Server  LOG      ✓ Compiled in 4.6s
+[59:14:55.903] Browser ERROR   ./app/Components/NewsSection.tsx:1:20
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |                    ^^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:55.903] Browser ERROR   ./app/Components/NewsSection.tsx:1:10
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |          ^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.013] Browser ERROR   ./app/Components/NewsSection.tsx:1:20
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |                    ^^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.013] Browser ERROR   ./app/Components/NewsSection.tsx:1:10
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |          ^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[59:14:59.671] Browser ERROR   ./app/Components/NewsSection.tsx:1:20
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |                    ^^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.671] Browser ERROR   ./app/Components/NewsSection.tsx:1:10
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |          ^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.671] Browser WARN    Image with src "/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[59:14:59.671] Browser ERROR   ./app/Components/NewsSection.tsx:1:20
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |                    ^^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.671] Browser ERROR   ./app/Components/NewsSection.tsx:1:10
+Ecmascript file had an error
+> 1 | import { useState, useEffect } from "react";
+    |          ^^^^^^^^
+  2 | import { motion } from "framer-motion";
+  3 | import Image from "next/image";
+  4 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./app/Components/NewsSection.tsx
+    ./app/page.tsx
+[59:14:59.671] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/news" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+-                           style={{overflow-x:"hidden",overflow-y:"hidden"}}
+                          >
+                  ...
+
+[59:14:59.671] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[59:15:03.402] Server  LOG      ✓ Compiled in 828ms
+[59:15:03.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[59:15:04.145] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[59:15:46.110] Browser WARN    Image with src "/news2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:15:46.110] Browser WARN    Image with src "/news3.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:15:46.110] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[59:16:58.791] Server  LOG      ✓ Compiled in 254ms
