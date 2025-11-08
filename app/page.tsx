@@ -1,7 +1,12 @@
+import Hero from "./Components/Hero";
+import NewsSection from "@/app/Components/NewsSection";
+
 export default function HomePage() {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Welcome to Sri Lions Sports Club</h1>
+    <main>
+      <Hero />
+      <NewsSection />
+      {/* other sections go here */}
     </main>
   );
 }

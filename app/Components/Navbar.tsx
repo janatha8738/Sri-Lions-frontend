@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Montserrat } from "next/font/google";
 
-// ✅ Import Montserrat ExtraBold for the heading
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["800"], // ExtraBold
@@ -17,6 +16,7 @@ export default function Navbar() {
   const [isHovering, setIsHovering] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSportsOpen, setIsMobileSportsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const sports = [
     { name: "Rugby", path: "/sports/rugby" },
@@ -31,16 +31,32 @@ export default function Navbar() {
     { name: "Other6", path: "/sports/other6" },
   ];
 
+  // Delay closing sports menu when hover leaves
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: any;
     if (!isHovering) {
       timer = setTimeout(() => setIsSportsOpen(false), 200);
     }
     return () => clearTimeout(timer);
   }, [isHovering]);
 
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // change 50px as needed
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-[#090202] text-white shadow-md">
+    <nav
+      className={`fixed left-0 w-full z-40 backdrop-blur-md transition-all duration-300 shadow-lg ${
+        isScrolled
+          ? "top-[-5px] bg-[#000000]/45"
+          : "top-[36px] bg-[#000000]/45"
+      }`}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Left side - Logo + Text */}
         <div className="flex items-center gap-3">
@@ -49,12 +65,10 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Sri Lions Club Logo"
-                width={85}
-                height={85}
+                width={75}
+                height={75}
                 className="cursor-pointer"
               />
-
-              {/* Text next to logo */}
               <div className="leading-tight">
                 <h1
                   className={`${montserrat.className} text-2xl font-extrabold text-white`}
@@ -71,8 +85,16 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-10 text-[17px] font-medium items-center">
-          <li><Link href="/" className="hover:text-[#800000] transition-colors">Home</Link></li>
-          <li><Link href="/news" className="hover:text-[#800000] transition-colors">News</Link></li>
+          <li>
+            <Link href="/" className="hover:text-[#800000] transition-colors">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/news" className="hover:text-[#800000] transition-colors">
+              News
+            </Link>
+          </li>
 
           {/* Sports Dropdown (Desktop) */}
           <li
@@ -109,9 +131,21 @@ export default function Navbar() {
             </ul>
           </li>
 
-          <li><Link href="/events" className="hover:text-[#800000] transition-colors">Events</Link></li>
-          <li><Link href="/about" className="hover:text-[#800000] transition-colors">About Us</Link></li>
-          <li><Link href="/contact" className="hover:text-[#800000] transition-colors">Contact Us</Link></li>
+          <li>
+            <Link href="/events" className="hover:text-[#800000] transition-colors">
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:text-[#800000] transition-colors">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="hover:text-[#800000] transition-colors">
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile Menu Toggle */}
@@ -129,8 +163,16 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col space-y-2 p-5 text-[17px] font-medium">
-          <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
-          <li><Link href="/news" className="hover:text-gray-300">News</Link></li>
+          <li>
+            <Link href="/" className="hover:text-gray-300">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/news" className="hover:text-gray-300">
+              News
+            </Link>
+          </li>
 
           {/* Sports Dropdown (Mobile) */}
           <li>
@@ -161,9 +203,21 @@ export default function Navbar() {
             </ul>
           </li>
 
-          <li><Link href="/events" className="hover:text-gray-300">Events</Link></li>
-          <li><Link href="/about" className="hover:text-gray-300">About Us</Link></li>
-          <li><Link href="/contact" className="hover:text-gray-300">Contact Us</Link></li>
+          <li>
+            <Link href="/events" className="hover:text-gray-300">
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:text-gray-300">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="hover:text-gray-300">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
