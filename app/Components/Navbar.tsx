@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Montserrat } from "next/font/google";
+import { usePathname } from "next/navigation"; // ✅ Import pathname hook
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,6 +18,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSportsOpen, setIsMobileSportsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const pathname = usePathname(); // ✅ Current route
 
   const sports = [
     { name: "Rugby", path: "/sports/rugby" },
@@ -31,7 +34,7 @@ export default function Navbar() {
     { name: "Other6", path: "/sports/other6" },
   ];
 
-  // Delay closing sports menu when hover leaves
+  // Delay closing sports dropdown
   useEffect(() => {
     let timer: any;
     if (!isHovering) {
@@ -43,22 +46,28 @@ export default function Navbar() {
   // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // change 50px as needed
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Active link style helper
+  const linkClass = (path: string) =>
+    `transition-colors ${
+      pathname === path ? "text-[#800000] font-semibold" : "hover:text-[#800000]"
+    }`;
 
   return (
     <nav
       className={`fixed left-0 w-full z-40 backdrop-blur-md transition-all duration-300 shadow-lg ${
         isScrolled
           ? "top-[-5px] bg-[#000000]/45"
-          : "top-[36px] bg-[#000000]/45"
+          : "md:top-[36px] top-0 bg-[#000000]/45"
       }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Left side - Logo + Text */}
+        {/* Logo */}
         <div className="flex items-center gap-3">
           <Link href="/">
             <div className="flex items-center gap-3">
@@ -84,19 +93,19 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-10 text-[17px] font-medium items-center">
+        <ul className="hidden md:flex space-x-10 text-[17px] font-medium items-center text-white">
           <li>
-            <Link href="/" className="hover:text-[#800000] transition-colors">
+            <Link href="/" className={linkClass("/")}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/news" className="hover:text-[#800000] transition-colors">
+            <Link href="/news" className={linkClass("/news")}>
               News
             </Link>
           </li>
 
-          {/* Sports Dropdown (Desktop) */}
+          {/* Sports Dropdown */}
           <li
             className="relative"
             onMouseEnter={() => {
@@ -132,24 +141,24 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/events" className="hover:text-[#800000] transition-colors">
+            <Link href="/events" className={linkClass("/events")}>
               Events
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-[#800000] transition-colors">
+            <Link href="/about" className={linkClass("/about")}>
               About Us
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:text-[#800000] transition-colors">
+            <Link href="/contact" className={linkClass("/contact")}>
               Contact Us
             </Link>
           </li>
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden text-white">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -164,17 +173,17 @@ export default function Navbar() {
       >
         <ul className="flex flex-col space-y-2 p-5 text-[17px] font-medium">
           <li>
-            <Link href="/" className="hover:text-gray-300">
+            <Link href="/" className={linkClass("/")} onClick={() => setIsMobileMenuOpen(false)}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/news" className="hover:text-gray-300">
+            <Link href="/news" className={linkClass("/news")} onClick={() => setIsMobileMenuOpen(false)}>
               News
             </Link>
           </li>
 
-          {/* Sports Dropdown (Mobile) */}
+          {/* Sports (Mobile Dropdown) */}
           <li>
             <button
               onClick={() => setIsMobileSportsOpen(!isMobileSportsOpen)}
@@ -204,17 +213,17 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/events" className="hover:text-gray-300">
+            <Link href="/events" className={linkClass("/events")} onClick={() => setIsMobileMenuOpen(false)}>
               Events
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-gray-300">
+            <Link href="/about" className={linkClass("/about")} onClick={() => setIsMobileMenuOpen(false)}>
               About Us
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:text-gray-300">
+            <Link href="/contact" className={linkClass("/contact")} onClick={() => setIsMobileMenuOpen(false)}>
               Contact Us
             </Link>
           </li>

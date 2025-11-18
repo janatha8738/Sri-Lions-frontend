@@ -39,8 +39,10 @@ export default function NewsSection() {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Duplicate array to create seamless loop
-  const displayCards = isDesktop ? [...newsData, ...newsData] : newsData;
+  // ✅ Duplicate multiple times to ensure continuous loop
+  const repeatedCards = isDesktop
+    ? [...newsData, ...newsData, ...newsData]
+    : newsData;
 
   return (
     <section
@@ -59,25 +61,21 @@ export default function NewsSection() {
       <div className="overflow-hidden relative">
         <motion.div
           className="flex gap-8"
-          animate={
-            isDesktop
-              ? { x: ["0%", "-33.33%"] } // slide left by 1/3 of width
-              : { x: "0%" }
-          }
+          animate={isDesktop ? { x: ["0%", "-100%"] } : { x: "0%" }}
           transition={
             isDesktop
               ? {
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 12, // slower = longer duration
+                    duration: 25, // slower = smoother
                     ease: "linear",
                   },
                 }
               : {}
           }
         >
-          {displayCards.map((item, index) => (
+          {repeatedCards.map((item, index) => (
             <div
               key={index}
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden min-w-[300px] sm:min-w-[250px]"

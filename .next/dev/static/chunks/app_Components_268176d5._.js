@@ -224,8 +224,9 @@ function NewsSection() {
             })["NewsSection.useEffect"];
         }
     }["NewsSection.useEffect"], []);
-    // Duplicate array to create seamless loop
-    const displayCards = isDesktop ? [
+    // ✅ Duplicate multiple times to ensure continuous loop
+    const repeatedCards = isDesktop ? [
+        ...newsData,
         ...newsData,
         ...newsData
     ] : newsData;
@@ -245,13 +246,13 @@ function NewsSection() {
                                 children: "News"
                             }, void 0, false, {
                                 fileName: "[project]/app/Components/NewsSection.tsx",
-                                lineNumber: 52,
+                                lineNumber: 54,
                                 columnNumber: 18
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Components/NewsSection.tsx",
-                        lineNumber: 51,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -259,13 +260,13 @@ function NewsSection() {
                         children: "Stay updated with our latest announcements and updates"
                     }, void 0, false, {
                         fileName: "[project]/app/Components/NewsSection.tsx",
-                        lineNumber: 54,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Components/NewsSection.tsx",
-                lineNumber: 50,
+                lineNumber: 52,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -275,21 +276,20 @@ function NewsSection() {
                     animate: isDesktop ? {
                         x: [
                             "0%",
-                            "-33.33%"
+                            "-100%"
                         ]
-                    } // slide left by 1/3 of width
-                     : {
+                    } : {
                         x: "0%"
                     },
                     transition: isDesktop ? {
                         x: {
                             repeat: Infinity,
                             repeatType: "loop",
-                            duration: 12,
+                            duration: 25,
                             ease: "linear"
                         }
                     } : {},
-                    children: displayCards.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: repeatedCards.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden min-w-[300px] sm:min-w-[250px]",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -301,12 +301,12 @@ function NewsSection() {
                                         className: "object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/NewsSection.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 84,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Components/NewsSection.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 83,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -317,7 +317,7 @@ function NewsSection() {
                                             children: item.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/Components/NewsSection.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 92,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -325,35 +325,35 @@ function NewsSection() {
                                             children: item.description
                                         }, void 0, false, {
                                             fileName: "[project]/app/Components/NewsSection.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 95,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Components/NewsSection.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 91,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, index, true, {
                             fileName: "[project]/app/Components/NewsSection.tsx",
-                            lineNumber: 81,
+                            lineNumber: 79,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/Components/NewsSection.tsx",
-                    lineNumber: 60,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Components/NewsSection.tsx",
-                lineNumber: 59,
+                lineNumber: 61,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Components/NewsSection.tsx",
-        lineNumber: 46,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 }
