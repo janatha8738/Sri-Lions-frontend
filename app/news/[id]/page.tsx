@@ -5,8 +5,11 @@ import { Calendar, ArrowLeft } from "lucide-react";
 
 const API_URL = "http://localhost:4000/api/content";
 
-export default async function NewsDetail({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function NewsDetail(
+  props: { params: Promise<{ id: string }> }
+) {
+  // ✅ CORRECT: Await the params
+  const { id } = await props.params;
 
   try {
     const res = await fetch(`${API_URL}/news/${id}`, {
@@ -15,29 +18,37 @@ export default async function NewsDetail({ params }: { params: { id: string } })
 
     if (!res.ok) {
       console.log("Backend error:", res.status);
-      notFound();
+      notFound(); // 404 page
     }
 
     const data = await res.json();
 
-    // THIS IS THE KEY: BACKEND RETURNS "id", NOT "_id"
     if (!data.success || !data.data) {
       notFound();
     }
 
-    const news = data.data; // ← this has .id (not ._id)
+    const news = data.data;
 
     return (
       <main className="pt-32 pb-20 px-4 sm:px-16 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen">
         <div className="max-w-5xl mx-auto">
-          <Link href="/news" className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold mb-8 transition">
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold mb-8 transition"
+          >
             <ArrowLeft size={20} /> Back to All News
           </Link>
 
           <article className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden">
             {news.image ? (
               <div className="relative w-full h-96 md:h-[500px]">
-                <Image src={news.image} alt={news.title} fill className="object-cover" priority />
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               </div>
             ) : (
@@ -51,11 +62,14 @@ export default async function NewsDetail({ params }: { params: { id: string } })
                 <div className="flex items-center gap-2 text-orange-500 font-semibold mb-6">
                   <Calendar size={20} />
                   <span>
-                    {new Date(news.createdAt || news.date || Date.now()).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    {new Date(news.createdAt || news.date).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}
                   </span>
                 </div>
               )}

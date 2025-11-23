@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type NewsItem = {
-  _id: string;
+  id: string;
   title: string;
   description: string;
   image?: string;
@@ -26,6 +26,7 @@ export default function NewsPage() {
   // Fetch news from backend
   const fetchNews = async (pageNum: number) => {
     try {
+      setIsFetching(true);
       const res = await fetch(`${API_URL}?page=${pageNum}&limit=6`);
       const data = await res.json();
 
@@ -40,33 +41,40 @@ export default function NewsPage() {
       }
     } catch (err) {
       console.error("Failed to fetch news:", err);
+    } finally {
+      setIsFetching(false);
     }
   };
 
   // Initial load
   useEffect(() => {
-    fetchNews(1).finally(() => setLoadingInitial(false));
+    const loadInitial = async () => {
+      await fetchNews(1);
+      setLoadingInitial(false);
+    };
+    loadInitial();
   }, []);
 
   // Infinite scroll
   useEffect(() => {
-    if (loadingInitial || !hasMore) return;
+    if (loadingInitial || !hasMore || isFetching) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !isFetching && hasMore) {
-          setIsFetching(true);
           const nextPage = page + 1;
-          fetchNews(nextPage).finally(() => {
+          fetchNews(nextPage).then(() => {
             setPage(nextPage);
-            setIsFetching(false);
           });
         }
       },
       { threshold: 0.5 }
     );
 
-    if (loadMoreRef.current) observer.observe(loadMoreRef.current);
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
     return () => observer.disconnect();
   }, [page, isFetching, hasMore, loadingInitial]);
 
@@ -125,13 +133,12 @@ export default function NewsPage() {
       >
         {news.map((item) => (
           <motion.div
-            key={item._id}
+            key={item.id}
             variants={itemVariants}
             whileHover={{ scale: 1.05, rotate: 0.5 }}
             className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
           >
-            {/* FIXED: Use item._id instead of item.id */}
-            <Link href={`/news/${item._id}`}>
+            <Link href={`/news/${item.id}`}>
               <div className="relative w-full h-60 sm:h-72">
                 {item.image ? (
                   <Image
