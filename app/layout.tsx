@@ -1,7 +1,7 @@
 import "./globals.css";
-import LogoPreloader from "@/app/components/LogoPreloader";
-import Header from "@/app/components/Header";
-import Navbar from "@/app/components/Navbar";
+import LogoPreloader from "./components/LogoPreloader";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
