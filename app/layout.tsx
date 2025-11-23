@@ -1,6 +1,7 @@
 import "./globals.css";
-import Header from "../app/Components/Header";
-import Navbar from "@/app/Components/Navbar";
+import LogoPreloader from "@/app/components/LogoPreloader";
+import Header from "@/app/components/Header";
+import Navbar from "@/app/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,13 +9,21 @@ export const metadata: Metadata = {
   description: "Official website of Sri Lions Sports Club",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative">
+        {/* ✅ Logo Preloader covers everything at first */}
+        <LogoPreloader />
+
+        {/* ✅ Main site content (hidden under preloader at first) */}
         <Header />
         <Navbar />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
