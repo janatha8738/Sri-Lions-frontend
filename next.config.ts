@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // For Next.js 16, Turbopack is enabled by default
+  // but there's no direct config option to disable it
+  // The environment variable is the recommended approach
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+
