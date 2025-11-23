@@ -5,8 +5,11 @@ import { Calendar, Clock, MapPin, ArrowLeft } from "lucide-react";
 
 const API_URL = "http://localhost:4000/api/content";
 
-export default async function EventDetail({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function EventDetail(
+  props: { params: Promise<{ id: string }> } // Fixed: params is a Promise
+) {
+  // ✅ FIX: Await the params
+  const { id } = await props.params;
 
   if (!id || id === "undefined") notFound();
 

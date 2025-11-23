@@ -6,8 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type EventItem = {
-  _id?: string;
-  id?: string;
+  id: string;
   title: string;
   description: string;
   date?: string;
@@ -27,6 +26,7 @@ export default function EventsPage() {
 
   const fetchEvents = async (pageNum: number) => {
     try {
+      setIsFetching(true);
       const res = await fetch(`${API_URL}?page=${pageNum}&limit=6`);
       const data = await res.json();
 
@@ -42,33 +42,55 @@ export default function EventsPage() {
     } catch (err) {
       console.error("Failed to fetch events:", err);
     } finally {
+      setIsFetching(false);
       if (pageNum === 1) setLoadingInitial(false);
     }
   };
 
+  // Initial load
   useEffect(() => {
-    fetchEvents(1);
+    const loadInitial = async () => {
+      await fetchEvents(1);
+    };
+    loadInitial();
   }, []);
 
+  // Infinite scroll
   useEffect(() => {
     if (loadingInitial || !hasMore || isFetching) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsFetching(true);
-          fetchEvents(page + 1).then(() => {
-            setPage((p) => p + 1);
-            setIsFetching(false);
+      (entries) => {
+        if (entries[0].isIntersecting && !isFetching && hasMore) {
+          const nextPage = page + 1;
+          fetchEvents(nextPage).then(() => {
+            setPage(nextPage);
           });
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
-    if (loadMoreRef.current) observer.observe(loadMoreRef.current);
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
     return () => observer.disconnect();
   }, [page, hasMore, isFetching, loadingInitial]);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } },
+  };
 
   if (loadingInitial) {
     return (
@@ -105,19 +127,18 @@ export default function EventsPage() {
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ staggerChildren: 0.15 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
       >
         {events.map((item) => (
           <motion.div
-            key={item._id || item.id}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            key={item.id}
+            variants={itemVariants}
             whileHover={{ scale: 1.05, rotate: 0.5 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
           >
-            <Link href={`/events/${item._id || item.id}`}>
+            <Link href={`/events/${item.id}`}>
               <div className="relative w-full h-60 sm:h-72">
                 {item.image ? (
                   <Image
@@ -164,11 +185,19 @@ export default function EventsPage() {
         ))}
       </motion.div>
 
-      <div ref={loadMoreRef} className="h-20 mt-10" />
+      {/* Load More Trigger */}
+      <div ref={loadMoreRef} className="h-10 mt-10" />
 
+      {/* Loading More */}
       {isFetching && (
         <div className="text-center py-10">
-          <p className="text-xl text-gray-600 dark:text-gray-400">Loading more events...</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-xl text-gray-600 dark:text-gray-400"
+          >
+            Loading more events...
+          </motion.p>
         </div>
       )}
 

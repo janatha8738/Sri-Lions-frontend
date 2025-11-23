@@ -8,7 +8,8 @@ import Link from "next/link";
 type NewsItem = {
   id: string;
   title: string;
-  description: string;
+  heading: string;
+  description?: string;
   image?: string;
   createdAt?: string;
 };
@@ -158,7 +159,7 @@ export default function NewsPage() {
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
-                  {item.description}
+                  {item.heading}
                 </p>
                 {item.createdAt && (
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
