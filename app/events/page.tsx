@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 type EventItem = {
-  id: string;
+  _id: string; // Changed from 'id' to '_id' (common MongoDB field name)
+  id?: string; // Keep both for compatibility
   title: string;
   description: string;
   date?: string;
@@ -29,6 +30,8 @@ export default function EventsPage() {
       setIsFetching(true);
       const res = await fetch(`${API_URL}?page=${pageNum}&limit=6`);
       const data = await res.json();
+
+      console.log("API Response:", data); // Debug log
 
       if (data.success && data.data) {
         const newItems = data.data;
@@ -77,6 +80,11 @@ export default function EventsPage() {
 
     return () => observer.disconnect();
   }, [page, hasMore, isFetching, loadingInitial]);
+
+  // Get the correct ID for each event
+  const getEventId = (event: EventItem): string => {
+    return event._id || event.id || "";
+  };
 
   // Animation variants
   const containerVariants = {
@@ -131,58 +139,63 @@ export default function EventsPage() {
         initial="hidden"
         animate="show"
       >
-        {events.map((item) => (
-          <motion.div
-            key={item.id}
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, rotate: 0.5 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
-          >
-            <Link href={`/events/${item.id}`}>
-              <div className="relative w-full h-60 sm:h-72">
-                {item.image ? (
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="bg-gradient-to-br from-orange-400 to-pink-600 h-full flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold">EVENT</span>
-                  </div>
-                )}
-              </div>
+        {events.map((item) => {
+          const eventId = getEventId(item);
+          console.log(`Event: ${item.title}, ID: ${eventId}`); // Debug log
+          
+          return (
+            <motion.div
+              key={eventId}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, rotate: 0.5 }}
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
+            >
+              <Link href={`/events/${eventId}`}>
+                <div className="relative w-full h-60 sm:h-72">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="bg-gradient-to-br from-orange-400 to-pink-600 h-full flex items-center justify-center">
+                      <span className="text-white text-4xl font-bold">EVENT</span>
+                    </div>
+                  )}
+                </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
-                  {item.title}
-                </h3>
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                    {item.title}
+                  </h3>
 
-                {item.date && (
-                  <p className="text-orange-500 font-bold text-sm mb-2">
-                    {new Date(item.date).toLocaleDateString("en-US", {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                  {item.date && (
+                    <p className="text-orange-500 font-bold text-sm mb-2">
+                      {new Date(item.date).toLocaleDateString("en-US", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </p>
+                  )}
+
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                    {item.description}
                   </p>
-                )}
 
-                <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
-                  {item.description}
-                </p>
-
-                {item.createdAt && (
-                  <p className="text-xs text-gray-400 mt-4">
-                    Posted: {new Date(item.createdAt).toLocaleDateString()}
-                  </p>
-                )}
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+                  {item.createdAt && (
+                    <p className="text-xs text-gray-400 mt-4">
+                      Posted: {new Date(item.createdAt).toLocaleDateString()}
+                    </p>
+                  )}
+                </div>
+              </Link>
+            </motion.div>
+          );
+        })}
       </motion.div>
 
       {/* Load More Trigger */}
