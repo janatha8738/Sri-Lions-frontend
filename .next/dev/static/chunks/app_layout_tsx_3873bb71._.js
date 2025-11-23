@@ -7,8 +7,8 @@
   "static/chunks/node_modules_framer-motion_dist_es_fdd5ade6._.js",
   "static/chunks/node_modules_react-icons_fa_index_mjs_0459ff00._.js",
   "static/chunks/node_modules_react-icons_lib_844c6c50._.js",
-  "static/chunks/node_modules_e6a96923._.js",
-  "static/chunks/[root-of-the-server]__bcd01e96._.js"
+  "static/chunks/node_modules_b4a0b1da._.js",
+  "static/chunks/[root-of-the-server]__428c3d14._.js"
 ],
     source: "dynamic"
 });

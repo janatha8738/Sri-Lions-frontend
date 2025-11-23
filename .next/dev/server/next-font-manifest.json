@@ -6,7 +6,19 @@
     "[project]/app/admin/page": [
       "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
     ],
+    "[project]/app/events/page": [
+      "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
+    ],
+    "[project]/app/login/page": [
+      "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
+    ],
+    "[project]/app/news/[id]/page": [
+      "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
+    ],
     "[project]/app/news/page": [
+      "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
+    ],
+    "[project]/app/page": [
       "static/media/5125eda54869f75a-s.p.e25e75bc.woff2"
     ]
   },
