@@ -1,0 +1,146 @@
+[00:00:01.214] Server  LOG      ✓ Ready in 881ms
+[00:00:10.043] Server  LOG      ○ Compiling / ...
+[00:00:12.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.224] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         crxlauncher=""
+                        >
+                          <body
+                            className="relative"
+-                           __processed_cbc56d1e-732f-4b67-b289-f70ad6902c1e__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6Im5pbWxtZWpibW5lY25hZ2hnbWJhaG1iYWRk..."
+                          >
+                            <LogoPreloader>
+                            <Header>
+                            <Navbar>
+                              <nav className="fixed left...">
+                                <div className="max-w-6xl ...">
+                                  <div>
+                                  <ul>
+                                  <div
+                                    className="md:hidden text-white"
+-                                   bis_skin_checked="1"
+                                  >
+                                <div
+                                  className="md:hidden bg-[#5a0a0a] text-white overflow-hidden transition-all duration..."
+-                                 bis_skin_checked="1"
+                                >
+                            ...
+                              <HomePage>
+                                <main>
+                                  <Hero>
+                                    <section className="relative w..." style={{...}}>
+                                      <div
+                                        className="absolute inset-0 bg-black/50"
+-                                       bis_skin_checked="1"
+                                      >
+                                      <motion.div className="relative z..." initial={{opacity:0,y:40}} ...>
+                                        <div
+                                          className="relative z-10 text-center text-white px-6"
+                                          style={{opacity:0,transform:"translateY..."}}
+                                          ref={function useMotionRef.useCallback}
+-                                         bis_skin_checked="1"
+                                        >
+                                          <motion.h2>
+                                          <motion.h1>
+                                          <motion.div className="flex flex-..." initial={{opacity:0}} ...>
+                                            <div
+                                              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                                              style={{opacity:0}}
+                                              ref={function useMotionRef.useCallback}
+-                                             bis_skin_checked="1"
+                                            >
+                                  <NewsSection>
+                                    <section className="py-16 px-2..." id="news">
+                                      <div
+                                        className="max-w-7xl mx-auto text-center mb-12"
+-                                       bis_skin_checked="1"
+                                      >
+                                      <div
+                                        className="overflow-hidden relative"
+-                                       bis_skin_checked="1"
+                                      >
+                                        <motion.div className="flex gap-8" animate={{x:"0%"}} transition={{}}>
+                                          <div
+                                            className="flex gap-8"
+                                            style={{}}
+                                            ref={function useMotionRef.useCallback}
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidd..."
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="relative w-full h-56"
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+                                                className="p-5"
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidd..."
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="relative w-full h-56"
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+                                                className="p-5"
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidd..."
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="relative w-full h-56"
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+                                                className="p-5"
+-                                               bis_skin_checked="1"
+                                              >
+                  ...
+
+[00:00:13.224] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:13.225] Browser WARN    Image with src "/news1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:13.225] Browser WARN    Image with src "/news2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:13.225] Browser WARN    Image with src "/news3.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

@@ -5,254 +5,130 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-type NewsItem = {
-  _id: string; // Changed from 'id' to '_id'
-  id?: string; // Keep for compatibility
-  title: string;
-  heading: string;
-  description?: string;
-  image?: string;
-  createdAt?: string;
-};
-
-// Dummy data for testing
-const dummyNews: NewsItem[] = [
-  {
-    _id: "65a1b2c3d4e5f6a7b8c9d0f1",
-    title: "New Sports Complex Inauguration",
-    heading: "State-of-the-art sports facility now open for community use",
-    description: "The newly built sports complex featuring indoor courts, swimming pool, and fitness center was inaugurated by the club president.",
-    image: "/images/sports-complex.jpg",
-    createdAt: "2024-01-20T10:00:00.000Z"
-  },
-  {
-    _id: "65a1b2c3d4e5f6a7b8c9d0f2",
-    title: "Annual General Meeting 2024",
-    heading: "Key decisions and future plans discussed in the AGM",
-    description: "Members gathered for the annual general meeting to review the year's achievements and plan upcoming activities.",
-    image: "/images/agm-meeting.jpg",
-    createdAt: "2024-01-15T14:30:00.000Z"
-  },
-  {
-    _id: "65a1b2c3d4e5f6a7b8c9d0f3",
-    title: "Charity Drive Success",
-    heading: "Community raises over $50,000 for local shelters",
-    description: "Thanks to the generous contributions from our members, we've successfully supported multiple local charities.",
-    image: "/images/charity-success.jpg",
-    createdAt: "2024-01-10T09:15:00.000Z"
-  }
+// -------------------------
+// Dummy News Data
+// Replace with API later
+// -------------------------
+const allNews = [
+  { id: "1", title: "Tech Innovations Shaping 2025", description: "From AI to Web3, explore how emerging technologies are transforming industries across the globe.", image: "/news1.png" },
+  { id: "2", title: "SLIIT Launches New IT Program", description: "The program aims to produce industry-ready graduates skilled in cloud computing and full-stack development.", image: "/news2.png" },
+  { id: "3", title: "Developers Embrace Next.js 15", description: "Next.js continues to redefine frontend performance with powerful server-side rendering features.", image: "/news3.png" },
+  { id: "4", title: "AI Ethics Framework Introduced Globally", description: "A new international initiative ensures that artificial intelligence technologies are developed responsibly.", image: "/news4.png" },
+  { id: "5", title: "Quantum Computing Gets Real", description: "Tech giants announce breakthroughs bringing quantum computing closer to practical use cases.", image: "/news5.png" },
+  { id: "6", title: "New Mobile App Trends 2025", description: "Mobile development continues to evolve with AI-powered apps.", image: "/news6.png" },
+  { id: "7", title: "Cloud Computing Advances", description: "Cloud services become faster, more secure, and more scalable.", image: "/news7.png" },
 ];
 
+// -------------------------
+// Variants for animations
+// -------------------------
+const containerVariants = {
+  hidden: { opacity: 0 }, // ✅ added opacity
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 export default function NewsPage() {
-  const [news, setNews] = useState<NewsItem[]>([]);
+  const [news, setNews] = useState(allNews.slice(0, 6));
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const itemsPerPage = 6;
   const [isFetching, setIsFetching] = useState(false);
-  const [loadingInitial, setLoadingInitial] = useState(true);
-  const [useDummyData, setUseDummyData] = useState(false);
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
-  const API_URL = "http://localhost:4000/api/content/news";
-
-  // Fetch news from backend
-  const fetchNews = async (pageNum: number) => {
-    try {
-      setIsFetching(true);
-      const res = await fetch(`${API_URL}?page=${pageNum}&limit=6`);
-      
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-      
-      const data = await res.json();
-      console.log("News API Response:", data);
-
-      if (data.success && data.data) {
-        const newItems = data.data;
-        if (pageNum === 1) {
-          setNews(newItems);
-        } else {
-          setNews((prev) => [...prev, ...newItems]);
-        }
-        setHasMore(newItems.length === 6);
-      } else {
-        throw new Error("API returned unsuccessful response");
-      }
-    } catch (err) {
-      console.error("Failed to fetch news, using dummy data:", err);
-      // Fallback to dummy data
-      if (pageNum === 1) {
-        setNews(dummyNews);
-        setHasMore(false);
-        setUseDummyData(true);
-      }
-    } finally {
-      setIsFetching(false);
-    }
-  };
-
-  // Initial load
+  // -------------------------
+  // Infinite Scroll
+  // -------------------------
   useEffect(() => {
-    const loadInitial = async () => {
-      await fetchNews(1);
-      setLoadingInitial(false);
-    };
-    loadInitial();
-  }, []);
-
-  // Infinite scroll
-  useEffect(() => {
-    if (loadingInitial || !hasMore || isFetching || useDummyData) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !isFetching && hasMore) {
-          const nextPage = page + 1;
-          fetchNews(nextPage).then(() => {
-            setPage(nextPage);
-          });
+        if (entries[0].isIntersecting && !isFetching) {
+          setIsFetching(true);
+          setTimeout(() => {
+            const nextPage = page + 1;
+            const start = (nextPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            if (start < allNews.length) {
+              setNews((prev) => [...prev, ...allNews.slice(start, end)]);
+              setPage(nextPage);
+            }
+            setIsFetching(false);
+          }, 700);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 1 }
     );
 
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
-    }
-
+    if (loadMoreRef.current) observer.observe(loadMoreRef.current);
     return () => observer.disconnect();
-  }, [page, isFetching, hasMore, loadingInitial, useDummyData]);
-
-  // Get the correct ID for each news item
-  const getNewsId = (newsItem: NewsItem): string => {
-    return newsItem._id || newsItem.id || "";
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } },
-  };
-
-  if (loadingInitial) {
-    return (
-      <section className="pt-32 sm:pt-40 px-4 sm:px-16 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen flex items-center justify-center">
-        <p className="text-2xl text-gray-600 dark:text-gray-400">Loading news...</p>
-      </section>
-    );
-  }
+  }, [page, isFetching]);
 
   return (
     <section className="pt-32 sm:pt-40 px-4 sm:px-16 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen">
-      {/* Debug info */}
-      {useDummyData && (
-        <div className="max-w-7xl mx-auto mb-4 p-4 bg-yellow-100 border border-yellow-400 rounded">
-          <p className="text-yellow-800 text-sm">
-            Using dummy news data for testing. API might be unavailable.
-          </p>
-        </div>
-      )}
-
+      {/* Page Heading */}
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white">
           All <span className="text-orange-500">News</span>
         </h1>
         <p className="text-gray-600 dark:text-gray-300 mt-3 text-lg">
-          Explore all our announcements, updates, and club stories.
+          Explore all our announcements, updates, and technology stories.
         </p>
       </div>
 
+      {/* News Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         variants={containerVariants}
         initial="hidden"
         animate="show"
       >
-        {news.map((item) => {
-          const newsId = getNewsId(item);
-          console.log(`Rendering news: ${item.title}, ID: ${newsId}`);
-          
-          return (
-            <motion.div
-              key={newsId}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotate: 0.5 }}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
-            >
-              <Link href={`/news/${newsId}`}>
-                <div className="relative w-full h-60 sm:h-72">
-                  {item.image ? (
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <div className="bg-gradient-to-br from-orange-400 to-red-600 h-full flex items-center justify-center">
-                      <span className="text-white text-4xl font-bold">NEWS</span>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
-                    {item.heading}
-                  </p>
-                  {item.createdAt && (
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                      {new Date(item.createdAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                  )}
-                </div>
-              </Link>
-            </motion.div>
-          );
-        })}
+        {news.map((item, index) => (
+          <motion.div
+            key={`${item.id}-${index}`}
+            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05, rotate: 0.5 }}
+          >
+            <Link href={`/news/${item.id}`}>
+              <div className="relative w-full h-60 sm:h-72">
+                <Image src={item.image} alt={item.title} fill className="object-cover" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </motion.div>
 
-      {/* Load More Trigger */}
-      {hasMore && <div ref={loadMoreRef} className="h-10 mt-10" />}
-
       {/* Loading More */}
-      {isFetching && (
-        <div className="text-center py-10">
-          <motion.p
+      <div ref={loadMoreRef} className="mt-10 flex justify-center">
+        {isFetching && (
+          <motion.div
+            className="text-gray-600 dark:text-gray-300 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xl text-gray-600 dark:text-gray-400"
           >
-            Loading more news...
-          </motion.p>
-        </div>
-      )}
-
-      {!hasMore && news.length > 6 && (
-        <div className="text-center py-10">
-          <p className="text-gray-500 text-lg">You've reached the end!</p>
-        </div>
-      )}
-
-      {news.length === 0 && !loadingInitial && (
-        <div className="text-center py-10">
-          <p className="text-2xl text-gray-500">No news available yet.</p>
-          <p className="text-gray-400 mt-4">Add some from Admin Panel!</p>
-        </div>
-      )}
+            Loading more...
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 }

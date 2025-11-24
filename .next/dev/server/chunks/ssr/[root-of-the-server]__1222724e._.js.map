@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Samuda/OneDrive/Desktop/SriLions%20Web/Sri-Lions-frontend/app/page.tsx"],"sourcesContent":["export default function HomePage() {\r\n  return (\r\n    <main className=\"p-6\">\r\n      <h1 className=\"text-2xl font-bold\">Welcome to Sri Lions Sports Club</h1>\r\n    </main>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;kBACd,cAAA,8OAAC;YAAG,WAAU;sBAAqB;;;;;;;;;;;AAGzC","debugId":null}}]
+}
