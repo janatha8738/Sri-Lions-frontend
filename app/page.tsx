@@ -1,5 +1,5 @@
-import Hero from "./components/Hero";
-import NewsSection from "@/app/components/NewsSection";
+import Hero from "./Components/Hero";
+import NewsSection from "@/app/Components/NewsSection";
 
 export default function HomePage() {
   return (
