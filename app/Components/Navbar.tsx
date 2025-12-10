@@ -13,34 +13,10 @@ const montserrat = Montserrat({
 });
 
 export default function Navbar() {
-  const [isSportsOpen, setIsSportsOpen] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileSportsOpen, setIsMobileSportsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const pathname = usePathname();
-
-  const sports = [
-    { name: "Rugby", path: "/sports/rugby" },
-    { name: "Netball", path: "/sports/netball" },
-    { name: "Cricket", path: "/sports/cricket" },
-    { name: "Golf", path: "/sports/golf" },
-    { name: "Other", path: "/sports/other" },
-    { name: "Other2", path: "/sports/other2" },
-    { name: "Other3", path: "/sports/other3" },
-    { name: "Other4", path: "/sports/other4" },
-    { name: "Other5", path: "/sports/other5" },
-    { name: "Other6", path: "/sports/other6" },
-  ];
-
-  useEffect(() => {
-    let timer: any;
-    if (!isHovering) {
-      timer = setTimeout(() => setIsSportsOpen(false), 200);
-    }
-    return () => clearTimeout(timer);
-  }, [isHovering]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -79,37 +55,13 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Navigation + Login Button */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10 text-[17px] font-medium text-white">
           <Link href="/" className={linkClass("/")}>Home</Link>
           <Link href="/news" className={linkClass("/news")}>News</Link>
 
-          {/* Sports Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => { setIsSportsOpen(true); setIsHovering(true); }}
-            onMouseLeave={() => setIsHovering(false)}
-          >
-            <button className="hover:text-[#800000] transition-colors flex items-center gap-1">
-              Sports
-            </button>
-
-            <ul
-              className={`absolute bg-[#5a0a0a] top-full mt-2 py-2 w-48 rounded-md shadow-lg z-50 transform transition-all duration-300 origin-top ${
-                isSportsOpen ? "opacity-100 scale-y-100 visible" : "opacity-0 scale-y-0 invisible"
-              }`}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              {sports.map((sport) => (
-                <li key={sport.name}>
-                  <Link href={sport.path} className="block px-4 py-2 hover:bg-[#661010] transition">
-                    {sport.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Sports now a normal link */}
+          <Link href="/sports" className={linkClass("/sports")}>Sports</Link>
 
           <Link href="/events" className={linkClass("/events")}>Events</Link>
           <Link href="/about" className={linkClass("/about")}>About Us</Link>
@@ -125,9 +77,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Icons */}
         <div className="md:hidden flex items-center gap-4">
-          {/* Mobile Login Button */}
           <Link href="/login" className="text-white">
             <LogIn size={24} />
           </Link>
@@ -146,32 +97,24 @@ export default function Navbar() {
       >
         <ul className="flex flex-col space-y-2 p-5 text-[17px] font-medium">
           <li><Link href="/" className={linkClass("/")} onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+
           <li><Link href="/news" className={linkClass("/news")} onClick={() => setIsMobileMenuOpen(false)}>News</Link></li>
 
-          {/* Mobile Sports Dropdown */}
+          {/* Sports simple link */}
           <li>
-            <button
-              onClick={() => setIsMobileSportsOpen(!isMobileSportsOpen)}
-              className="w-full flex justify-between items-center hover:text-gray-300"
+            <Link
+              href="/sports"
+              className={linkClass("/sports")}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Sports <span>{isMobileSportsOpen ? "Up Arrow" : "Down Arrow"}</span>
-            </button>
-            <ul className={`transition-all duration-300 overflow-hidden ${isMobileSportsOpen ? "max-h-[400px]" : "max-h-0"}`}>
-              {sports.map((sport) => (
-                <li key={sport.name}>
-                  <Link href={sport.path} className="block px-8 py-2 hover:bg-[#661010]" onClick={() => setIsMobileMenuOpen(false)}>
-                    {sport.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              Sports
+            </Link>
           </li>
 
           <li><Link href="/events" className={linkClass("/events")} onClick={() => setIsMobileMenuOpen(false)}>Events</Link></li>
           <li><Link href="/about" className={linkClass("/about")} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
           <li><Link href="/contact" className={linkClass("/contact")} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
 
-          {/* Mobile Login Button in Menu */}
           <li className="pt-4 border-t border-white/20">
             <Link
               href="/login"
