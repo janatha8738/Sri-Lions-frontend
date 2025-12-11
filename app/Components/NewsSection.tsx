@@ -1,38 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Calendar, TrendingUp } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 const dummyNews = {
   featured: {
     id: "1",
-    title: "The third team to win back-to-back tournaments",
-    description: "Adipiscing elit, sed do eiusmod tempor incididunt labore dolore magna aliqua. Ut enim ad minim veniam...",
-    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&h=600&fit=crop",
-    date: "09 AUG",
-    category: "Champions"
+    title: "Siri Lions Dominate National Sevens Championship",
+    description: "The Lions secure their third consecutive title with a flawless performance in the finals, showcasing unmatched speed, strategy, and team unity on the field.",
+    date: "10 DEC",
+    category: "RUGBY CHAMPIONS"
   },
   trending: [
     {
       id: "2",
-      title: "Live cricket score of IND vs PAK, ICC World Cup",
-      date: "Aug 31, 2023",
-      category: "CHAMPIONS",
-      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop"
+      title: "Lions Unveil New Outdoor Training Facility",
+      date: "Dec 5, 2025",
+      category: "CLUB NEWS"
     },
     {
       id: "3",
-      title: "Real cricket fans get on a hatred train to Delhi",
-      date: "Aug 3, 2023",
-      category: "CHAMPIONS",
-      image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&h=300&fit=crop"
+      title: "Youth Academy Players Called Up to National Squad",
+      date: "Dec 1, 2025",
+      category: "DEVELOPMENT"
     },
     {
       id: "4",
-      title: "Australian champions take a world tour to score",
-      date: "Aug 10, 2023",
-      category: "CHAMPIONS",
-      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=400&h=300&fit=crop"
+      title: "Lions Announce Pre-Season Tour to Australia",
+      date: "Nov 28, 2025",
+      category: "INTERNATIONAL"
     }
   ]
 };
@@ -41,94 +38,151 @@ export default function NewsSection() {
   const [featured] = useState(dummyNews.featured);
   const [trending] = useState(dummyNews.trending);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-150px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <section className="py-16 px-4 sm:px-8 lg:px-16 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-20 bg-[#0f0f0f] overflow-hidden">
+      <div className="px-4 sm:px-8 lg:px-16 text-white">
+
         {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-2">
-            Trending now
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="mb-16 max-w-4xl"
+        >
+          <h2 className="text-5xl sm:text-6xl font-black text-white mb-3 tracking-tight">
+            LATEST NEWS
           </h2>
-        </div>
+          <div className="h-1 w-32 bg-red-600 rounded-full" />
+        </motion.div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Featured Card - Left Side */}
-          <div className="relative group cursor-pointer">
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20"
+        >
+
+          {/* FEATURED CARD */}
+          <motion.div variants={itemVariants}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative h-[420px] lg:h-[540px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 via-gray-900 to-black"
+            >
+              {/* Featured rugby image */}
               <img
-                src={featured.image}
-                alt={featured.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80"
+                alt="Rugby Championship"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               
-              {/* Category Badge */}
-              <div className="absolute top-6 left-6">
-                <span className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold">
-                  {featured.category}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20" />
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className="flex items-center gap-2 text-orange-400 font-bold text-lg mb-3">
-                  <span className="text-4xl">{featured.date.split(' ')[0]}</span>
-                  <span className="text-sm mt-2">{featured.date.split(' ')[1]}</span>
+              <motion.span
+                initial={{ x: -30, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : {}}
+                transition={{ delay: 0.4 }}
+                className="absolute top-8 left-8 bg-red-600 text-white px-5 py-2 rounded-full text-sm font-black uppercase tracking-wider shadow-lg"
+              >
+                {featured.category}
+              </motion.span>
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.6, duration: 0.7 }}
+                className="absolute bottom-0 left-0 right-0 p-10 space-y-4"
+              >
+                <div className="flex items-center gap-3 text-red-500 font-black text-xl">
+                  <span className="text-6xl">{featured.date.split(' ')[0]}</span>
+                  <span className="text-2xl mt-4">{featured.date.split(' ')[1]}</span>
                 </div>
-                <h3 className="text-white text-2xl sm:text-3xl font-bold mb-3 leading-tight">
+                <h3 className="text-white text-3xl sm:text-4xl font-black leading-tight">
                   {featured.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-200 text-base leading-relaxed max-w-xl">
                   {featured.description}
                 </p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          {/* Trending Items - Right Side */}
-          <div className="space-y-6">
-            {trending.map((item) => (
-              <div
+          {/* TRENDING ITEMS */}
+          <div className="space-y-8">
+            {trending.map((item, index) => {
+              const images = [
+                "https://images.unsplash.com/photo-1567491397391-c6ef14751e4e?w=400&q=80",
+                "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&q=80",
+                "https://images.unsplash.com/photo-1596656407779-cd99279a517c?w=400&q=80"
+              ];
+              return (
+              <motion.div
                 key={item.id}
-                className="flex gap-4 group cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 p-4 rounded-xl transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ x: 12, scale: 1.02 }}
+                className="flex gap-5 group cursor-pointer bg-white/5 backdrop-blur-sm p-5 rounded-2xl border border-white/10 hover:border-red-600/50 transition-all duration-400"
               >
-                {/* Image */}
-                <div className="relative w-32 h-32 sm:w-40 sm:h-32 flex-shrink-0 rounded-xl overflow-hidden">
+                {/* Photo Area */}
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="relative w-36 h-36 sm:w-44 sm:h-36 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg"
+                >
                   <img
-                    src={item.image}
+                    src={images[index]}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 to-transparent" />
+                </motion.div>
 
-                {/* Content */}
-                <div className="flex-1 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-orange-500 text-xs font-bold tracking-wider">
+                <div className="flex-1 flex flex-col justify-center space-y-3">
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-red-500 font-bold uppercase tracking-wider">
                       {item.category}
                     </span>
-                    <span className="text-gray-400 text-xs flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
+                    <span className="text-gray-400 flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
                       {item.date}
                     </span>
                   </div>
-                  <h4 className="text-gray-900 dark:text-white text-lg font-bold leading-tight group-hover:text-orange-500 transition-colors">
+                  <h4 className="text-white text-xl font-bold leading-tight group-hover:text-red-500 transition-colors duration-300">
                     {item.title}
                   </h4>
                 </div>
-              </div>
-            ))}
+              </motion.div>
+            );
+            })}
           </div>
-        </div>
+        </motion.div>
 
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105">
-            <TrendingUp className="w-5 h-5" />
-            View All News
-          </button>
-        </div>
+        {/* VIEW ALL BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 0.8, duration: 0.4 }}
+          className="mt-16"
+        >
+          <motion.button
+            whileHover={{ scale: 1.1, boxShadow: "0 0 40px rgba(220, 38, 38, 0.7)" }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-black py-5 px-12 rounded-full text-xl shadow-2xl shadow-red-600/50 transition-all duration-300"
+          >
+            <TrendingUp className="w-7 h-7" />
+            VIEW ALL NEWS
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
