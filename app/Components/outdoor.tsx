@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BookOpen, Swords, ArrowRight, Trophy, Users, Calendar, Shield } from "lucide-react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -33,26 +34,29 @@ export default function OutdoorSportsIntro() {
       id: 1,
       title: "OUR LEGACY",
       icon: Shield,
-      description: "For over 15 years, Siri Lions RFC has been the heartbeat of Sri Lankan rugby. From humble beginnings on Negombo’s beaches to national dominance — every tackle, every try, every victory is etched into our unbreakable legacy.",
+      description:
+        "For over 15 years, Siri Lions RFC has been the heartbeat of Sri Lankan rugby. From humble beginnings on Negombo’s beaches to national dominance — every tackle, every try, every victory is etched into our unbreakable legacy.",
       image: "https://images.unsplash.com/photo-1509611881826-d2ee27079fac?w=1200&h=800&fit=crop",
-      imageAlt: "Siri Lions pack driving forward in a scrum"
+      imageAlt: "Siri Lions pack driving forward in a scrum",
     },
     {
       id: 2,
       title: "STORY",
       icon: BookOpen,
-      description: "Born on the beaches and fields of Negombo, Siri Lions RFC was founded by players who believed rugby is more than a game — it's a way of life. From grassroots to championship finals, we've grown through grit, brotherhood, and a love for the toughest sport on earth.",
+      description:
+        "Born on the beaches and fields of Negombo, Siri Lions RFC was founded by players who believed rugby is more than a game — it's a way of life. From grassroots to championship finals, we've grown through grit, brotherhood, and a love for the toughest sport on earth.",
       image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200&h=800&fit=crop",
-      imageAlt: "Siri Lions celebrating a hard-fought victory"
+      imageAlt: "Siri Lions celebrating a hard-fought victory",
     },
     {
       id: 3,
       title: "TRAINING PHILOSOPHY",
       icon: Swords,
-      description: "We don't train to play. We train to dominate. Every session is a battle. Every rep is war. Strength is earned. Speed is forged. Pain is temporary. Victory is forever. This is the Lions way.",
+      description:
+        "We don't train to play. We train to dominate. Every session is a battle. Every rep is war. Strength is earned. Speed is forged. Pain is temporary. Victory is forever. This is the Lions way.",
       image: "https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=1600&h=1000&fit=crop",
-      imageAlt: "Siri Lions player charging through contact at full intensity"
-    }
+      imageAlt: "Siri Lions player charging through contact at full intensity",
+    },
   ];
 
   const containerRef = useRef(null);
@@ -73,7 +77,6 @@ export default function OutdoorSportsIntro() {
     <section ref={containerRef} className="py-20 bg-[#0a0a0a] overflow-hidden">
       <div className="px-4 sm:px-8 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 xl:gap-24 items-start">
-
           {/* LEFT COLUMN 1 – Intro & Stats */}
           <motion.div
             initial={{ opacity: 0, x: -140 }}
@@ -82,7 +85,6 @@ export default function OutdoorSportsIntro() {
             className="lg:col-span-1 lg:sticky top-8"
           >
             <div className="space-y-16">
-
               {/* Main Headline */}
               <motion.div
                 initial={{ opacity: 0, y: 60 }}
@@ -91,13 +93,17 @@ export default function OutdoorSportsIntro() {
                 className="space-y-8"
               >
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
-                  BUILT BY<br />
-                  <span className="text-red-600 drop-shadow-2xl">WARRIORS</span><br />
-                  FORGED ON<br />
+                  BUILT BY
+                  <br />
+                  <span className="text-red-600 drop-shadow-2xl">WARRIORS</span>
+                  <br />
+                  FORGED ON
+                  <br />
                   THE FIELD
                 </h2>
                 <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed max-w-md">
-                  We don't just play rugby.<br />
+                  We don't just play rugby.
+                  <br />
                   We live it. Train it. Win it.
                 </p>
               </motion.div>
@@ -117,9 +123,7 @@ export default function OutdoorSportsIntro() {
                     </div>
 
                     <div className="text-4xl font-black text-white h-16 flex items-center justify-center">
-                      <motion.span ref={stat.counter.ref}>
-                        {stat.counter.display}
-                      </motion.span>
+                      <motion.span ref={stat.counter.ref}>{stat.counter.display}</motion.span>
                     </div>
 
                     <div className="text-sm text-gray-400 uppercase tracking-wider mt-1">
@@ -161,46 +165,59 @@ export default function OutdoorSportsIntro() {
 
           {/* COLUMN 2 – Content Cards */}
           <div className="lg:col-span-2 space-y-16">
-
             {/* Legacy & Story Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-              {sections.slice(0, 2).map((section, index) => (
-                <motion.div
-                  key={section.id}
-                  initial={{ opacity: 0, y: 100, x: index === 0 ? -80 : 80 }}
-                  animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
-                  transition={{ delay: 0.5 + index * 0.3, duration: 1, ease: "easeOut" }}
-                  className="group relative bg-gray-900/70 backdrop-blur-xl border-2xl border-2 border-gray-800 rounded-3xl overflow-hidden hover:shadow-4xl hover:shadow-red-600/50 transition-all duration-700 hover:-translate-y-8"
-                >
-                  <div className="relative h-80 overflow-hidden">
-                    <img
-                      src={section.image}
-                      alt={section.imageAlt}
-                      className="w-full h-full object-cover group-hover:scale-120 transition-transform duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent" />
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                      className="absolute top-8 right-8 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-3xl"
-                    >
-                      <ArrowRight className="w-10 h-10 text-white" />
-                    </motion.div>
-                  </div>
+              {sections.slice(0, 2).map((section, index) => {
+                // choose destination based on index: 0 -> legacy, 1 -> story
+                const href = index === 0 ? "/legacy-details" : "/story-details";
 
-                  <div className="p-10 space-y-6">
-                    <div className="flex items-center gap-5">
-                      <section.icon className="w-12 h-12 text-red-600" />
-                      <h3 className="text-4xl font-black text-white uppercase tracking-widest">
-                        {section.title}
-                      </h3>
+                return (
+                  <motion.div
+                    key={section.id}
+                    initial={{ opacity: 0, y: 100, x: index === 0 ? -80 : 80 }}
+                    animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+                    transition={{ delay: 0.5 + index * 0.3, duration: 1, ease: "easeOut" }}
+                    className="group relative bg-gray-900/70 backdrop-blur-xl border-2xl border-2 border-gray-800 rounded-3xl overflow-hidden hover:shadow-4xl hover:shadow-red-600/50 transition-all duration-700 hover:-translate-y-8"
+                  >
+                    <div className="relative h-80 overflow-hidden">
+                      <img
+                        src={section.image}
+                        alt={section.imageAlt}
+                        className="w-full h-full object-cover group-hover:scale-120 transition-transform duration-1000"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent" />
+
+                      {/* Rotating clickable arrow (now wrapped with Link) */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                        className="absolute top-8 right-8 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-3xl"
+                      >
+                        <Link href={href}>
+                          {/* keep a div as child of Link for Next 13; add accessible label */}
+                          <div
+                            role="link"
+                            aria-label={`Read more about ${section.title}`}
+                            className="w-20 h-20 flex items-center justify-center"
+                          >
+                            <ArrowRight className="w-10 h-10 text-white" />
+                          </div>
+                        </Link>
+                      </motion.div>
                     </div>
-                    <p className="text-gray-200 text-lg leading-relaxed">
-                      {section.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+
+                    <div className="p-10 space-y-6">
+                      <div className="flex items-center gap-5">
+                        <section.icon className="w-12 h-12 text-red-600" />
+                        <h3 className="text-4xl font-black text-white uppercase tracking-widest">
+                          {section.title}
+                        </h3>
+                      </div>
+                      <p className="text-gray-200 text-lg leading-relaxed">{section.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Training Philosophy Full-Width Card */}
