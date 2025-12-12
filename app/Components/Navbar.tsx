@@ -22,7 +22,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const sports = [
-    { name: "Rugby", path: "/sports/rugby" },
+    { name: "Rugby", path: "/Rugby" },           // ← Fixed: goes to your rugby page
     { name: "Netball", path: "/sports/netball" },
     { name: "Cricket", path: "/sports/cricket" },
     { name: "Golf", path: "/sports/golf" },
@@ -79,7 +79,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Navigation + Login Button */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10 text-[17px] font-medium text-white">
           <Link href="/" className={linkClass("/")}>Home</Link>
           <Link href="/news" className={linkClass("/news")}>News</Link>
@@ -103,7 +103,11 @@ export default function Navbar() {
             >
               {sports.map((sport) => (
                 <li key={sport.name}>
-                  <Link href={sport.path} className="block px-4 py-2 hover:bg-[#661010] transition">
+                  <Link 
+                    href={sport.path} 
+                    className="block px-4 py-2 hover:bg-[#661010] transition"
+                    onClick={() => setIsSportsOpen(false)}
+                  >
                     {sport.name}
                   </Link>
                 </li>
@@ -115,7 +119,7 @@ export default function Navbar() {
           <Link href="/about" className={linkClass("/about")}>About Us</Link>
           <Link href="/contact" className={linkClass("/contact")}>Contact Us</Link>
 
-          {/* LOGIN BUTTON (Desktop) */}
+          {/* Login Button (Desktop) */}
           <Link
             href="/login"
             className="flex items-center gap-2 bg-[#800000] hover:bg-[#660000] text-white px-5 py-2 rounded-full transition-all font-semibold"
@@ -127,11 +131,9 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          {/* Mobile Login Button */}
           <Link href="/login" className="text-white">
             <LogIn size={24} />
           </Link>
-
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
           </button>
@@ -154,12 +156,16 @@ export default function Navbar() {
               onClick={() => setIsMobileSportsOpen(!isMobileSportsOpen)}
               className="w-full flex justify-between items-center hover:text-gray-300"
             >
-              Sports <span>{isMobileSportsOpen ? "Up Arrow" : "Down Arrow"}</span>
+              Sports <span>{isMobileSportsOpen ? "▲" : "▼"}</span>
             </button>
             <ul className={`transition-all duration-300 overflow-hidden ${isMobileSportsOpen ? "max-h-[400px]" : "max-h-0"}`}>
               {sports.map((sport) => (
                 <li key={sport.name}>
-                  <Link href={sport.path} className="block px-8 py-2 hover:bg-[#661010]" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link 
+                    href={sport.path} 
+                    className="block px-8 py-2 hover:bg-[#661010]"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     {sport.name}
                   </Link>
                 </li>
@@ -171,7 +177,6 @@ export default function Navbar() {
           <li><Link href="/about" className={linkClass("/about")} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
           <li><Link href="/contact" className={linkClass("/contact")} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
 
-          {/* Mobile Login Button in Menu */}
           <li className="pt-4 border-t border-white/20">
             <Link
               href="/login"
