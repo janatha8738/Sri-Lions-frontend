@@ -35,8 +35,8 @@ export default function OutdoorSportsIntro() {
       title: "OUR LEGACY",
       icon: Shield,
       description:
-        "For over 15 years, Siri Lions RFC has been the heartbeat of Sri Lankan rugby. From humble beginnings on Negombo’s beaches to national dominance — every tackle, every try, every victory is etched into our unbreakable legacy.",
-      image: "https://images.unsplash.com/photo-1509611881826-d2ee27079fac?w=1200&h=800&fit=crop",
+        "For over 15 years, Siri Lions RFC has been the heartbeat of Sri Lankan rugby. From humble beginnings on Negombo's beaches to national dominance — every tackle, every try, every victory is etched into our unbreakable legacy.",
+      image: "/images/legacy.png",
       imageAlt: "Siri Lions pack driving forward in a scrum",
     },
     {
@@ -45,7 +45,7 @@ export default function OutdoorSportsIntro() {
       icon: BookOpen,
       description:
         "Born on the beaches and fields of Negombo, Siri Lions RFC was founded by players who believed rugby is more than a game — it's a way of life. From grassroots to championship finals, we've grown through grit, brotherhood, and a love for the toughest sport on earth.",
-      image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200&h=800&fit=crop",
+      image: "/images/story.png",
       imageAlt: "Siri Lions celebrating a hard-fought victory",
     },
     {
@@ -154,7 +154,7 @@ export default function OutdoorSportsIntro() {
                 className="relative group overflow-hidden rounded-3xl shadow-4xl border-4 border-gray-900 mt-12"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&h=1000&fit=crop"
+                  src="/images/lion.jpeg"
                   alt="Siri Lions player breaking through the line"
                   className="w-full h-[650px] object-cover group-hover:scale-115 transition-transform duration-1400"
                 />
