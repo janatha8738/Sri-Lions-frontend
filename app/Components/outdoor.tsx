@@ -41,7 +41,7 @@ export default function OutdoorSportsIntro() {
     },
     {
       id: 2,
-      title: "STORY",
+      title: "OUR STORY",
       icon: BookOpen,
       description:
         "Born on the beaches and fields of Negombo, Siri Lions RFC was founded by players who believed rugby is more than a game — it's a way of life. From grassroots to championship finals, we've grown through grit, brotherhood, and a love for the toughest sport on earth.",
