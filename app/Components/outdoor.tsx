@@ -86,27 +86,27 @@ export default function OutdoorSportsIntro() {
           >
             <div className="space-y-16">
               {/* Main Headline */}
-              <motion.div
-                initial={{ opacity: 0, y: 60 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.3, duration: 1 }}
-                className="space-y-8"
-              >
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
-                  BUILT BY
-                  <br />
-                  <span className="text-red-600 drop-shadow-2xl">WARRIORS</span>
-                  <br />
-                  FORGED ON
-                  <br />
-                  THE FIELD
-                </h2>
-                <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed max-w-md">
-                  We don't just play rugby.
-                  <br />
-                  We live it. Train it. Win it.
-                </p>
-              </motion.div>
+          <motion.div
+  initial={{ opacity: 0, y: 60 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ delay: 0.3, duration: 1 }}
+  className="space-y-6"
+>
+  <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+    SYMBOL
+    <br />
+    <span className="text-white drop-shadow-2xl">OF</span>
+    <br />
+    <span className="text-red-600 drop-shadow-2xl">PRIDE</span>
+  </h2>
+  <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed max-w-md">
+    Beyond the Game. Fueled by Passion. 
+    <br />
+    Driven to Victory
+  </p>
+</motion.div>
+
+
 
               {/* Animated Stats */}
               <div className="grid grid-cols-3 gap-6 py-8 border-t border-gray-800">
@@ -133,19 +133,6 @@ export default function OutdoorSportsIntro() {
                 ))}
               </div>
 
-              {/* CTA Button */}
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 1.2, duration: 0.7 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-5 px-8 rounded-full text-xl shadow-2xl shadow-red-600/50 flex items-center justify-center gap-4"
-              >
-                <span>START YOUR JOURNEY</span>
-                <ArrowRight className="w-8 h-8" />
-              </motion.button>
-
               {/* Hero Image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -156,7 +143,7 @@ export default function OutdoorSportsIntro() {
                 <img
                   src="/images/lion.jpeg"
                   alt="Siri Lions player breaking through the line"
-                  className="w-full h-[650px] object-cover group-hover:scale-115 transition-transform duration-1400"
+                  className="w-full h-[700px] object-cover object-top group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
               </motion.div>
@@ -168,7 +155,6 @@ export default function OutdoorSportsIntro() {
             {/* Legacy & Story Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
               {sections.slice(0, 2).map((section, index) => {
-                // choose destination based on index: 0 -> legacy, 1 -> story
                 const href = index === 0 ? "/legacy-details" : "/story-details";
 
                 return (
@@ -187,14 +173,12 @@ export default function OutdoorSportsIntro() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent" />
 
-                      {/* Rotating clickable arrow (now wrapped with Link) */}
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                         className="absolute top-8 right-8 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-3xl"
                       >
                         <Link href={href}>
-                          {/* keep a div as child of Link for Next 13; add accessible label */}
                           <div
                             role="link"
                             aria-label={`Read more about ${section.title}`}
@@ -231,7 +215,7 @@ export default function OutdoorSportsIntro() {
                 <img
                   src={sections[2].image}
                   alt={sections[2].imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-115 transition-transform duration-1400"
+                  className="w-full h-full object-cover object-center group-hover:scale-115 transition-transform duration-1400"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/98 via-black/85 to-transparent" />
 

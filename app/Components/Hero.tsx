@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       className="relative w-full flex items-center justify-center bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: "url('/images/heronew.jpg')",
+        backgroundImage: "url('/images/hero-bg.jpg')",
         height: `calc(100vh - ${offset}px)`,
         marginTop: "126px",
       }}
