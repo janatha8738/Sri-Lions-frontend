@@ -95,7 +95,7 @@ export default function Navbar() {
       {/* Main Navigation */}
       <nav
         className={`fixed left-0 w-full z-40 backdrop-blur-md transition-all duration-300 shadow-xl ${
-          isScrolled ? "top-[48px] bg-gradient-to-r from-slate-950/95 via-slate-900/95 to-slate-950/95 border-b border-yellow-600/20" : "top-[48px] bg-gradient-to-r from-slate-950/90 via-slate-900/90 to-slate-950/90 border-b border-yellow-600/30"
+          isScrolled ? "top-[48px] bg-gradient-to-r from-[#3C0008]/95 via-[#3C0008]/95 to-[#3C0008]/95 border-b border-yellow-600/20" : "top-[48px] bg-gradient-to-r from-[#3C0008]/90 via-[#3C0008]/90 to-[#3C0008]/90 border-b border-yellow-600/30"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -142,7 +142,7 @@ export default function Navbar() {
               </button>
 
               <ul
-                className={`absolute bg-gradient-to-b from-slate-800 to-slate-900 top-full mt-2 py-2 w-48 rounded-xl shadow-2xl border border-yellow-600/20 z-50 transform transition-all duration-300 origin-top ${
+                className={`absolute bg-gradient-to-b from-[#3C0008] to-[#3C0008] top-full mt-2 py-2 w-48 rounded-xl shadow-2xl border border-yellow-600/20 z-50 transform transition-all duration-300 origin-top ${
                   isSportsOpen ? "opacity-100 scale-y-100 visible" : "opacity-0 scale-y-0 invisible"
                 }`}
                 onMouseEnter={() => setIsHovering(true)}
@@ -189,7 +189,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden bg-gradient-to-b from-slate-800 to-slate-900 text-white overflow-hidden transition-all duration-300 border-t border-yellow-600/20 ${
+          className={`md:hidden bg-gradient-to-b from-[#3C0008] to-[#3C0008] text-white overflow-hidden transition-all duration-300 border-t border-yellow-600/20 ${
             isMobileMenuOpen ? "max-h-[700px]" : "max-h-0"
           }`}
         >
