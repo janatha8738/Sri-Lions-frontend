@@ -123,71 +123,88 @@ export default function EventsSection() {
   const [events] = useState(rugbyEvents);
 
   return (
-    <section className="py-16 px-4 sm:px-8 lg:px-16 bg-gray-50 dark:bg-[#0a0a0a] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-4 sm:px-8 lg:px-16 bg-[#0a0a0a] overflow-hidden relative">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-600 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-rose-900 rounded-full blur-3xl"></div>
+      </div>
 
-        {/* Header - Centered */}
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-2">
-            Upcoming Events
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Header - Bold & Centered */}
+        <div className="mb-16 text-center">
+          <div className="inline-block mb-4">
+            <span className="text-amber-500 font-black text-sm uppercase tracking-widest px-4 py-2 bg-amber-500/10 rounded-full border border-amber-500/30">
+              🏆 What's Coming
+            </span>
+          </div>
+          <h2 className="text-5xl sm:text-7xl font-black text-white mb-6 tracking-tight">
+            UPCOMING <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">EVENTS</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Experience the intensity of international and club rugby tournaments
+          <div className="h-1 w-32 bg-gradient-to-r from-emerald-600 via-amber-500 to-rose-800 rounded-full mx-auto mb-6"></div>
+          <p className="text-gray-300 text-xl max-w-2xl mx-auto font-medium">
+            Don't miss the biggest rugby events of the season
           </p>
         </div>
 
         {/* Auto-scrolling Carousel */}
         <div className="relative">
-          <div className="flex animate-scroll-left hover:pause-scroll gap-6">
+          <div className="flex animate-scroll-left hover:pause-scroll gap-8">
             {events.map((event, index) => (
               <div
                 key={`${event.id}-${index}`}
-                className="flex-none w-80 group relative overflow-hidden rounded-xl cursor-pointer"
+                className="flex-none w-96 group relative overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-96 overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125 group-hover:rotate-2"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-orange-500 transition-all duration-300 rounded-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
+                  <div className="absolute inset-0 border-4 border-transparent group-hover:border-amber-500 transition-all duration-500 rounded-2xl" />
+                  
+                  {/* Animated Shine Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/30 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1200" />
+                  </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="mb-3">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    <span className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-lg">
                       {event.category}
                     </span>
                   </div>
-                  <h3 className="text-white text-2xl font-bold mb-3 leading-tight group-hover:text-orange-500 transition-colors duration-300">
+                  <h3 className="text-white text-3xl font-black mb-4 leading-tight group-hover:text-amber-400 transition-colors duration-500 drop-shadow-2xl">
                     {event.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-gray-300 text-sm">
-                    <Calendar className="w-4 h-4" />
+                  <div className="flex items-center gap-3 text-gray-200 text-base font-semibold mb-4">
+                    <Calendar className="w-5 h-5 text-amber-500" />
                     <span>{event.date}</span>
                   </div>
-                  <div className="mt-4 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <div className="flex items-center gap-2 text-orange-500 font-semibold">
-                      <span>View Details</span>
-                      <ArrowRight className="w-4 h-4" />
+                  <div className="mt-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    <div className="flex items-center gap-3 text-amber-400 font-black text-lg">
+                      <span>LEARN MORE</span>
+                      <ArrowRight className="w-6 h-6 animate-pulse" />
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000" />
-                </div>
+                {/* Corner Accent */}
+                <div className="absolute top-4 right-4 w-16 h-16 border-t-4 border-r-4 border-rose-800 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-tr-xl"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 border-b-4 border-l-4 border-emerald-700 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-bl-xl"></div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* View All Button - Centered */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-            <span>View All Events</span>
-            <ArrowRight className="w-5 h-5" />
+        {/* View All Button - Enhanced */}
+        <div className="text-center mt-20">
+          <button className="group inline-flex items-center gap-4 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800 text-white font-black py-6 px-12 rounded-full text-xl transition-all duration-500 hover:scale-110 shadow-2xl shadow-amber-500/50 hover:shadow-amber-600/70 border-2 border-amber-400/50">
+            <span>VIEW ALL EVENTS</span>
+            <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform duration-300" />
           </button>
         </div>
       </div>
@@ -198,7 +215,7 @@ export default function EventsSection() {
           100% { transform: translateX(-50%); }
         }
         .animate-scroll-left {
-          animation: scroll-left 40s linear infinite;
+          animation: scroll-left 50s linear infinite;
         }
         .hover\\:pause-scroll:hover {
           animation-play-state: paused;

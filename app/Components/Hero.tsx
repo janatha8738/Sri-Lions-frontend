@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       className="relative w-full flex items-center justify-center bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: "url('/images/hero-bg.jpg')",
+        backgroundImage: "url('/images/heronew.jpg')",
         height: `calc(100vh - ${offset}px)`,
         marginTop: "126px",
       }}
@@ -46,7 +46,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          Welcome to <span className="font-bold text-[#ffcccc]">Sri Lions</span>
+          Welcome to <span className="font-bold text-[#ffcccc]">Siri Lions</span>
         </motion.h2>
 
         <motion.h1
