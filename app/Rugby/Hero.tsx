@@ -4,7 +4,7 @@ export default function Hero() {
     <div
       className="relative h-96 md:h-[80vh] lg:h-[85vh] bg-cover bg-center bg-fixed"
       style={{
-        backgroundImage: "url('/images/hero photo.jpeg')",
+        backgroundImage: "url('/images/rugby.jpg')",
         backgroundColor: '#000', // fallback
       }}
     >
