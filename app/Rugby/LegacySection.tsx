@@ -14,75 +14,84 @@ const legacyAchievements = [
 
 export default function LegacySection() {
   return (
-    <section id="legacy" className="py-24 lg:py-32 px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+    <section id="legacy" className="py-24 lg:py-32 px-6 bg-[#0a0a0a] relative overflow-hidden">
       {/* Subtle animated background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgb(251 191 36) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgb(245 158 11) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }} />
       </div>
 
-      {/* Ambient glows */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl animate-pulse" />
+      {/* Ambient glows - Mixed colors */}
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-rose-800/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-500/10 border border-amber-500/30 rounded-full mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-emerald-600/10 via-amber-500/10 to-rose-800/10 border-2 border-amber-500/30 rounded-full mb-8 shadow-lg shadow-amber-500/20">
             <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="text-amber-400 font-bold tracking-wider uppercase">Championship Legacy</span>
+            <span className="text-amber-400 font-black tracking-wider uppercase">Championship Legacy</span>
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 leading-tight">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 leading-tight drop-shadow-2xl">
             A Legacy of Firsts
           </h2>
         </div>
 
-        {/* Introductory Description – New Addition */}
+        {/* Introductory Description */}
         <div className="max-w-5xl mx-auto mb-20 text-center space-y-6">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col items-center">
-              <Flag className="w-12 h-12 text-amber-400 mb-4" />
-              <p className="text-amber-300 font-semibold">Only Sri Lankan Team</p>
-              <p className="text-gray-400 text-sm">in Dubai 7s International Open Men’s Category</p>
+            <div className="flex flex-col items-center p-6 bg-gradient-to-br from-emerald-950/50 to-emerald-900/30 rounded-2xl border-2 border-emerald-700/30 hover:border-emerald-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-emerald-600/20">
+              <Flag className="w-14 h-14 text-emerald-400 mb-4" />
+              <p className="text-emerald-300 font-black text-lg">Only Sri Lankan Team</p>
+              <p className="text-gray-400 text-sm mt-2">in Dubai 7s International Open Men's Category</p>
             </div>
-            <div className="flex flex-col items-center">
-              <Trophy className="w-12 h-12 text-amber-400 mb-4" />
-              <p className="text-amber-300 font-semibold">Champions 2024</p>
-              <p className="text-gray-400 text-sm">International Open Men’s – Dubai 7s</p>
+            <div className="flex flex-col items-center p-6 bg-gradient-to-br from-amber-950/50 to-amber-900/30 rounded-2xl border-2 border-amber-600/30 hover:border-amber-500 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-amber-500/20">
+              <Trophy className="w-14 h-14 text-amber-400 mb-4" />
+              <p className="text-amber-300 font-black text-lg">Champions 2024</p>
+              <p className="text-gray-400 text-sm mt-2">International Open Men's – Dubai 7s</p>
             </div>
-            <div className="flex flex-col items-center">
-              <Users className="w-12 h-12 text-amber-400 mb-4" />
-              <p className="text-amber-300 font-semibold">First-Ever Ladies Rugby Academy</p>
-              <p className="text-gray-400 text-sm">Launched January 2024</p>
+            <div className="flex flex-col items-center p-6 bg-gradient-to-br from-rose-950/50 to-rose-900/30 rounded-2xl border-2 border-rose-800/30 hover:border-rose-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-rose-700/20">
+              <Users className="w-14 h-14 text-rose-400 mb-4" />
+              <p className="text-rose-300 font-black text-lg">First-Ever Ladies Rugby Academy</p>
+              <p className="text-gray-400 text-sm mt-2">Launched January 2024</p>
             </div>
           </div>
 
-          <div className="prose prose-invert max-w-none text-lg text-gray-300 leading-relaxed space-y-5">
+          <div className="prose prose-invert max-w-none text-lg text-gray-300 leading-relaxed space-y-5 bg-gradient-to-b from-gray-900/50 to-gray-950/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
             <p>
-              Sri Lions Rugby stands as <span className="text-amber-400 font-bold">the only Sri Lankan team</span> ever invited to compete annually in the prestigious <span className="text-white">Emirates Dubai 7s International Open Men’s Category</span> — the highest level of invitational rugby sevens in the world.
+              Sri Lions Rugby stands as <span className="text-emerald-400 font-black">the only Sri Lankan team</span> ever invited to compete annually in the prestigious <span className="text-white font-bold">Emirates Dubai 7s International Open Men's Category</span> — the highest level of invitational rugby sevens in the world.
             </p>
             <p>
-              From Gulf Men’s Champions in 2019 and 2020 to the historic <span className="text-amber-400 font-bold">International Open Men’s Championship victory in 2024</span>, Sri Lions has consistently raised the Sri Lankan flag on the global stage.
+              From Gulf Men's Champions in 2019 and 2020 to the historic <span className="text-amber-400 font-black">International Open Men's Championship victory in 2024</span>, Sri Lions has consistently raised the Sri Lankan flag on the global stage.
             </p>
             <p>
-              At home, our inaugural domestic squad made history in 2023 by winning the SLRFU Division B title <span className="text-amber-400 font-bold">undefeated in their very first season</span> — earning direct promotion to the elite A-Division to compete alongside legendary clubs such as CR & FC, CH & FC, Kandy SC, and the Armed Forces.
+              At home, our inaugural domestic squad made history in 2023 by winning the SLRFU Division B title <span className="text-emerald-400 font-black">undefeated in their very first season</span> — earning direct promotion to the elite A-Division to compete alongside legendary clubs such as CR & FC, CH & FC, Kandy SC, and the Armed Forces.
             </p>
-            <p className="text-amber-300 font-medium">
-              In 2024, Sri Lions broke new ground again by launching <span className="underline decoration-amber-400">Sri Lanka’s first-ever Ladies Rugby Academy</span> — a historic step toward empowering women in rugby after 145 years of the sport in Sri Lanka.
+            <p className="text-rose-300 font-bold">
+              In 2024, Sri Lions broke new ground again by launching <span className="underline decoration-amber-400 decoration-2">Sri Lanka's first-ever Ladies Rugby Academy</span> — a historic step toward empowering women in rugby after 145 years of the sport in Sri Lanka.
             </p>
           </div>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-amber-500/30 via-amber-500/70 to-amber-500/30" />
+          <div className="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-600/30 via-amber-500/70 to-rose-800/30 rounded-full" />
 
           <div className="space-y-12">
             {legacyAchievements.map((ach, i) => {
               const Icon = ach.icon;
               const isOdd = i % 2 === 0;
+              // Alternate colors
+              const colors = [
+                { bg: 'from-emerald-950/70 to-emerald-900/40', border: 'border-emerald-800', hoverBorder: 'hover:border-emerald-600', shadow: 'hover:shadow-emerald-600/20', icon: 'bg-emerald-500/10 border-emerald-500/30', iconColor: 'text-emerald-400', year: 'text-emerald-400', dot: 'bg-emerald-500' },
+                { bg: 'from-amber-950/70 to-amber-900/40', border: 'border-amber-800', hoverBorder: 'hover:border-amber-600', shadow: 'hover:shadow-amber-500/20', icon: 'bg-amber-500/10 border-amber-500/30', iconColor: 'text-amber-400', year: 'text-amber-400', dot: 'bg-amber-500' },
+                { bg: 'from-rose-950/70 to-rose-900/40', border: 'border-rose-900', hoverBorder: 'hover:border-rose-700', shadow: 'hover:shadow-rose-700/20', icon: 'bg-rose-800/10 border-rose-800/30', iconColor: 'text-rose-400', year: 'text-rose-400', dot: 'bg-rose-700' }
+              ];
+              const colorScheme = colors[i % 3];
+
               return (
                 <div
                   key={i}
@@ -91,25 +100,25 @@ export default function LegacySection() {
                   }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-10 w-6 h-6 bg-amber-500 rounded-full border-4 border-slate-900 shadow-lg shadow-amber-500/20 z-10" />
+                  <div className={`absolute left-6 md:left-1/2 md:-translate-x-1/2 top-10 w-7 h-7 ${colorScheme.dot} rounded-full border-4 border-black shadow-lg shadow-amber-500/30 z-10`} />
 
                   {/* Card */}
                   <div className={`w-full md:w-1/2 ${isOdd ? 'md:pr-16' : 'md:pl-16'}`}>
-                    <div className="ml-20 md:ml-0 bg-slate-900/70 backdrop-blur-md border border-slate-800 rounded-2xl p-8 hover:border-amber-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 group">
+                    <div className={`ml-20 md:ml-0 bg-gradient-to-br ${colorScheme.bg} backdrop-blur-md border-2 ${colorScheme.border} rounded-2xl p-8 ${colorScheme.hoverBorder} transition-all duration-500 hover:shadow-2xl ${colorScheme.shadow} group`}>
                       <div className="flex items-start gap-6">
-                        <div className="p-4 bg-amber-500/10 rounded-xl border border-amber-500/30 group-hover:scale-110 transition-transform">
-                          <Icon className="w-9 h-9 text-amber-400" />
+                        <div className={`p-4 ${colorScheme.icon} rounded-xl border group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-9 h-9 ${colorScheme.iconColor}`} />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-4 mb-3">
-                            <span className="text-4xl font-black text-amber-400">{ach.year}</span>
-                            <div className="h-px flex-1 bg-gradient-to-r from-amber-500/50 to-transparent" />
+                            <span className={`text-4xl font-black ${colorScheme.year}`}>{ach.year}</span>
+                            <div className={`h-1 flex-1 bg-gradient-to-r from-${colorScheme.year.split('-')[1]}-500/50 to-transparent rounded-full`} />
                           </div>
-                          <h3 className="text-xl lg:text-2xl font-bold text-white leading-tight group-hover:text-amber-50 transition-colors">
+                          <h3 className="text-xl lg:text-2xl font-bold text-white leading-tight group-hover:text-gray-100 transition-colors">
                             {ach.title}
                           </h3>
                         </div>
-                        <ChevronRight className="w-6 h-6 text-amber-600 group-hover:text-amber-400 group-hover:translate-x-2 transition-all" />
+                        <ChevronRight className={`w-6 h-6 ${colorScheme.iconColor} group-hover:translate-x-2 transition-all`} />
                       </div>
                     </div>
                   </div>

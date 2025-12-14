@@ -115,7 +115,7 @@ export default function Navbar() {
                 </div>
                 <div className="leading-tight">
                   <h1 className={`${montserrat.className} text-2xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 text-transparent bg-clip-text`}>
-                    SRI LIONS
+                    SIRI LIONS
                   </h1>
                   <p className="text-xs text-gray-400 tracking-wide">Symbol of Pride</p>
                 </div>
