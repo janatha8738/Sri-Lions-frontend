@@ -64,7 +64,7 @@ export default function SportsPrograms() {
       opacity: 1, 
       y: 0, 
       scale: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8 }
     }
   };
 
@@ -104,7 +104,7 @@ export default function SportsPrograms() {
           <motion.div
             initial={{ width: 0 }}
             animate={isInView ? { width: "120px" } : {}}
-            transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 0.8, duration: 1 }}
             className="h-2 bg-gradient-to-r from-emerald-600 via-amber-500 to-rose-800 rounded-full mx-auto"
           />
         </motion.div>
@@ -194,7 +194,7 @@ export default function SportsPrograms() {
                   <motion.div
                     initial={{ width: 0 }}
                     animate={hoveredCard === program.id ? { width: "100%" } : { width: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    transition={{ duration: 0.6 }}
                     className={`mt-6 h-2 bg-${colorScheme.bar} rounded-full shadow-lg`}
                   />
                 </div>

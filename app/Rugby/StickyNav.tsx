@@ -1,4 +1,3 @@
-// app/rugby/components/StickyNav.tsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -14,7 +13,8 @@ const tabs = [
 
 export default function StickyNav() {
   const [activeTab, setActiveTab] = useState("overview");
-  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,19 +25,25 @@ export default function StickyNav() {
           }
         });
       },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
+      {
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      }
     );
 
-    document.querySelectorAll("section[id]").forEach((section) => {
-      sectionRefs.current[section.id] = section;
-      observer.observe(section);
-    });
+    document
+      .querySelectorAll<HTMLElement>("section[id]")
+      .forEach((section) => {
+        sectionRefs.current[section.id] = section;
+        observer.observe(section);
+      });
 
     return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const section = sectionRefs.current[id];
+    section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

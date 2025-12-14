@@ -20,7 +20,7 @@ function useCountUp(end: number, suffix: string = "", duration: number = 2.5) {
     if (inView) {
       animate(count, end, {
         duration,
-        ease: "easeOut",
+        ease: [0.4, 0, 0.2, 1],
       });
     }
   }, [inView, count, end, duration]);
@@ -56,7 +56,7 @@ export default function OutdoorSportsIntro() {
         "Ready to become a Lion? Whether you're a seasoned player or stepping onto the field for the first time, Siri Lions RFC welcomes you. Join a brotherhood forged in battle, united by passion, and driven by the relentless pursuit of excellence. Your legacy starts here.",
       image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1600&h=1000&fit=crop",
       imageAlt: "Siri Lions team celebrating together in unity",
-    },,
+    },
   ];
 
   const containerRef = useRef(null);
@@ -81,7 +81,7 @@ export default function OutdoorSportsIntro() {
           <motion.div
             initial={{ opacity: 0, x: -140 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 1 }}
             className="lg:col-span-1 lg:sticky top-8"
           >
             <div className="space-y-16">
@@ -162,7 +162,7 @@ export default function OutdoorSportsIntro() {
                     key={section.id}
                     initial={{ opacity: 0, y: 100, x: index === 0 ? -80 : 80 }}
                     animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
-                    transition={{ delay: 0.5 + index * 0.3, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 0.5 + index * 0.3, duration: 1 }}
                     className="group relative bg-gradient-to-br from-emerald-950/70 to-rose-950/70 backdrop-blur-xl border-2xl border-2 border-rose-900/60 rounded-3xl overflow-hidden hover:shadow-4xl hover:shadow-amber-500/50 transition-all duration-700 hover:-translate-y-8"
                   >
                     <div className="relative h-80 overflow-hidden">
@@ -208,7 +208,7 @@ export default function OutdoorSportsIntro() {
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 120 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-              transition={{ delay: 1, duration: 1.4, ease: "easeOut" }}
+              transition={{ delay: 1, duration: 1.4 }}
               className="group relative bg-gradient-to-br from-rose-950/80 to-emerald-950/80 backdrop-blur-2xl border-4 border-rose-900/60 rounded-3xl overflow-hidden hover:shadow-4xl hover:shadow-amber-500/60 transition-all duration-800"
             >
               <div className="relative h-[600px] md:h-[700px] overflow-hidden">
